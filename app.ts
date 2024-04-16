@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './router';
-import apiContent from './src/api-content';
+import apiController from './src/service/api.service';
 
 class App{
     express: express.Application;
@@ -30,7 +30,7 @@ class App{
         this.middleware();
         this.database();
         this.router();
-        apiContent.fillSeries();
+        apiController.exec();
     }
 
 }

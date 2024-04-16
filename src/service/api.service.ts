@@ -1,6 +1,4 @@
 import serieRepository from "../repository/serie.repository";
-import { serieType } from "../types/serie.type";
-
 
 class ApiService{
 
@@ -93,7 +91,7 @@ class ApiService{
         
     }
 
-    async fillComics(comics){
+    async fillComics(comics: any){
 
         //Aqui está recebendo um array com todos os objetos comics dentro das series;
         //Extrair todos os ids, dar fetch em cada um deles e criar um comic a partir do que foi encontrado

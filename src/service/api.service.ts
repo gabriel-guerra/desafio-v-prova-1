@@ -67,7 +67,7 @@ class ApiService{
             id: secretWars.data.results[0].id, 
             title: secretWars.data.results[0].title,
             description: secretWars.data.results[0].description,
-            url: secretWars.data.results[0].resourceURI,
+            resourceURI: secretWars.data.results[0].resourceURI,
             startYear: secretWars.data.results[0].startYear,
             endYear: secretWars.data.results[0].endYear,
             comics: comics.data.results.map((comic: { id: Number, title: String; }) => {

@@ -2,7 +2,7 @@ export interface serieType{
     id: Number, 
     title: String,
     description: String,
-    url: String,
+    resourceURI: String,
     startYear: Number,
     endYear: Number,
     comics: [{id: Number, title: String}], 

@@ -1,118 +1,26 @@
-let comicsKeys = {
-    "id": "int",
-    "title": "string",
-    "issueNumber": "double",
-    "description": "string",
-    "isbn": "string",
-    "upc": "string",
-    "diamondCode": "string",
-    "ean": "string",
-    "issn": "string",
-    "format": "string",
-    "pageCount": "int",
-    "textObjects": [
-        {
-        "type": "string",
-        "language": "string",
-        "text": "string"
-        }
-    ],
-    "resourceURI": "string",
-    "urls": [
-        {
-        "type": "string",
-        "url": "string"
-        }
-    ],
-    "series": {
-        "resourceURI": "string",
-        "name": "string"
-    },
-    "variants": [
-        {
-        "resourceURI": "string",
-        "name": "string"
-        }
-    ],
-    "collections": [
-        {
-        "resourceURI": "string",
-        "name": "string"
-        }
-    ],
-    "collectedIssues": [
-        {
-        "resourceURI": "string",
-        "name": "string"
-        }
-    ],
-    "dates": [
-        {
-        "type": "string",
-        "date": "Date"
-        }
-    ],
-    "prices": [
-        {
-        "type": "string",
-        "price": "float"
-        }
-    ],
-    "thumbnail": {
-        "path": "string",
-        "extension": "string"
-    },
-    "images": [
-        {
-        "path": "string",
-        "extension": "string"
-        }
-    ],
-    "creators": {
-        "available": "int",
-        "returned": "int",
-        "collectionURI": "string",
-        "items": [
-        {
-            "resourceURI": "string",
-            "name": "string",
-            "role": "string"
-        }
-        ]
-    },
-    "characters": {
-        "available": "int",
-        "returned": "int",
-        "collectionURI": "string",
-        "items": [
-        {
-            "resourceURI": "string",
-            "name": "string",
-            "role": "string"
-        }
-        ]
-    },
-    "stories": {
-        "available": "int",
-        "returned": "int",
-        "collectionURI": "string",
-        "items": [
-        {
-            "resourceURI": "string",
-            "name": "string",
-            "type": "string"
-        }
-        ]
-    },
-    "events": {
-        "available": "int",
-        "returned": "int",
-        "collectionURI": "string",
-        "items": [
-        {
-            "resourceURI": "string",
-            "name": "string"
-        }
-        ]
-    }
+import { Schema, model } from 'mongoose';
+
+const comicsKeys = {
+    id: Number,
+    title: String,
+    issueNumber: Number,
+    description: String,
+    format: String,
+    pageCount: Number,
+    textObjects: [ { language: String, text: String } ],
+    resourceURI: String,
+    series: { id: Number, name: String },
+    prices: [ { type: String, price: Number } ],
+    creators: [ { id: Number, name: String, } ],
+    characters: [ { id: Number, name: String, } ],
+    stories: [ { id: Number, name: String, } ],
+    events: [ { resourceURI: String, name: String } ]
 }
+
+
+const comicsModel = new Schema (
+    comicsKeys,
+    {timestamps: true}
+);
+
+export default model('Comics', comicsModel);

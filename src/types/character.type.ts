@@ -1,6 +1,4 @@
-import { Schema, model } from 'mongoose';
-
-const characterKeys = {
+export interface characterType{
     id: Number,
     name: String,
     description: String,
@@ -10,10 +8,3 @@ const characterKeys = {
     events: [{ id: Number, name: String }],
     series: [{ id: Number, name: String }]
 }
-
-const characterModel = new Schema (
-    characterKeys,
-    {timestamps: true}
-);
-
-export default model('Character', characterModel);

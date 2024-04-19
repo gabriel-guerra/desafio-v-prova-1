@@ -1,7 +1,7 @@
 import serieRepository from "../repository/serie.repository";
+import { ts, apikey, hash } from "../../config";
 
 class ApiService{
-
 
     async exec(){
         
@@ -23,7 +23,7 @@ class ApiService{
 
     async fillSeries(){    
 
-        const secretWars: any = await fetch("http://gateway.marvel.com/v1/public/series/2063?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+        const secretWars: any = await fetch(`http://gateway.marvel.com/v1/public/series/2063?${ts}&${apikey}&${hash}&limit=40`)
         .then( async (res: Response) => {
             return await res.json();
         });
@@ -36,27 +36,27 @@ class ApiService{
 
         Promise.all([
 
-            comics = await fetch(secretWars.data.results[0].comics.collectionURI + "?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+            comics = await fetch(secretWars.data.results[0].comics.collectionURI + `?${ts}&${apikey}&${hash}&limit=40`)
             .then( async (res: Response) => {
                 return await res.json();
             }),
 
-            stories = await fetch(secretWars.data.results[0].stories.collectionURI + "?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+            stories = await fetch(secretWars.data.results[0].stories.collectionURI + `?${ts}&${apikey}&${hash}&limit=40`)
             .then( async (res: Response) => {
                 return await res.json();
             }),
 
-            characters = await fetch(secretWars.data.results[0].characters.collectionURI + "?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+            characters = await fetch(secretWars.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=40`)
             .then( async (res: Response) => {
                 return await res.json();
             }),
 
-            creators = await fetch(secretWars.data.results[0].creators.collectionURI + "?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+            creators = await fetch(secretWars.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=40`)
             .then( async (res: Response) => {
                 return await res.json();
             }),
 
-            events = await fetch(secretWars.data.results[0].events.collectionURI + "?ts=777&apikey=83d9fb1f0d0e5ad1f51ad6c53b1b1382&hash=31116a2567b2aa6501fe9349dc42d110&limit=40")
+            events = await fetch(secretWars.data.results[0].events.collectionURI + `?${ts}&${apikey}&${hash}&limit=40`)
             .then( async (res: Response) => {
                 return await res.json();
             })
@@ -93,9 +93,13 @@ class ApiService{
 
     async fillComics(comics: any){
 
-        //Aqui está recebendo um array com todos os objetos comics dentro das series;
-        //Extrair todos os ids, dar fetch em cada um deles e criar um comic a partir do que foi encontrado
-        //Criar a model
+       /*  comics.forEach(element => {
+            
+
+            //
+
+
+        }); */
 
     }
 

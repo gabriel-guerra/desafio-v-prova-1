@@ -4,9 +4,9 @@ import { characterType } from "../types/character.type";
 
 class CharacterRepository{
 
-    async createCharacter(serie: characterType){
+    async createCharacter(character: characterType){
 
-        return await characterModel.create(serie);
+        return await characterModel.create(character);
     
     }
 

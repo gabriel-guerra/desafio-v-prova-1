@@ -5,10 +5,10 @@ export interface storyType{
     resourceURI: String,
     type: String,   
     modified: Date,
-    comics:  [{ id: Number, name: String }],
-    series: [{ id: Number, name: String }],
-    events: [{ id: Number, name: String }],
+    comics:  [{ id: Number, title: String }],
+    series: [{ id: Number, title: String }],
+    events: [{ id: Number, title: String }],
     characters: [{ id: Number, name: String }],
-    creators: [{ id: Number, name: String }],
+    creators: [{ id: Number, fullName: String }],
     originalissue: { id: Number, name: String }
 }

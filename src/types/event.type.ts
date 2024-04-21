@@ -5,11 +5,11 @@ export interface eventType{
     resourceURI: String,
     start: Date,
     end: Date,
-    comics: [{ id: Number, name: String }],
-    stories: [{ id: Number, name: String }],
-    series: [{ id: Number, name: String }],
+    comics: [{ id: Number, title: String }],
+    stories: [{ id: Number, title: String }],
+    series: [{ id: Number, title: String }],
     characters: [{ id: Number, name: String }],
-    creators: [{ id: Number, name: String }],
+    creators: [{ id: Number, fullName: String }],
     next: { resourceURI: String, name: String },
     previous: { resourceURI: String, name: String }
 }

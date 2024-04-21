@@ -4,9 +4,9 @@ import { comicsType } from "../types/comics.type";
 
 class ComicsRepository{
 
-    async createComics(serie: comicsType){
+    async createComics(comicBook: comicsType){
 
-        return await comicsModel.create(serie);
+        return await comicsModel.create(comicBook);
     
     }
 

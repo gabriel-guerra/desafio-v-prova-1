@@ -4,7 +4,9 @@ const characterKeys = {
     id: Number,
     name: String,
     description: String,
-    resourceURI: String
+    resourceURI: String,
+    urls: [{ type_: String, url: String }],
+    thumbnail: { path: String, extension: String}
 }
 
 const characterModel = new Schema (

@@ -82,31 +82,16 @@ class ApiService{
                 .then((res) => res.json()
             );
 
-            let series: any;
             let creators: any;
             let characters: any;
-            let stories: any;
-            let events: any;
 
             Promise.all([
     
-                series = await fetch(fetchResult.data.results[0].series.resourceURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                    .then((res) => res.json()
-                ),
-
                 creators = await fetch(fetchResult.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
                     .then((res) => res.json()
                 ),
     
                 characters = await fetch(fetchResult.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                    .then((res) => res.json()
-                ),
-
-                stories = await fetch(fetchResult.data.results[0].stories.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                    .then((res) => res.json()
-                ),
-
-                events = await fetch(fetchResult.data.results[0].events.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
                     .then((res) => res.json()
                 )
     
@@ -123,9 +108,6 @@ class ApiService{
                     return { type_: textObject.type, language: textObject.language, text: textObject.text };
                 }),
                 resourceURI: fetchResult.data.results[0].resourceURI,
-                series: series.data.results.map((serie: { id: Number, title: String; }) => {
-                    return { id: serie.id, title: serie.title};
-                }),
                 prices: fetchResult.data.results[0].prices.map((price: {type: String, price: Number}) => {
                     return { type_: price.type, price: price.price };
                 }),
@@ -134,16 +116,38 @@ class ApiService{
                 }),
                 characters: characters.data.results.map((character: { id: Number, name: String; }) => {
                     return { id: character.id, name: character.name};
-                }),
-                stories: stories.data.results.map((story: { id: Number, title: String }) => {
-                    return { id: story.id, title: story.title };
-                }),
-                events: events.data.results.map((event: { id: Number, title: String; }) => {
-                    return { id: event.id, title: event.title };
                 })
             }
 
             await comicsRepository.createComics(obj);
+
+        });
+
+    }
+
+    async fillCharacters(characters: any){
+
+        characters.forEach(async (element: any) => {
+           
+            const fetchResult: any = await fetch(`http://gateway.marvel.com/v1/public/characters/${element.id}?${ts}&${apikey}&${hash}&limit=100`)
+                .then((res) => res.json()
+            );
+
+
+            let obj = { 
+                id: fetchResult.data.results[0].id, 
+                name: fetchResult.data.results[0].name,
+                description: fetchResult.data.results[0].description,
+                resourceURI: fetchResult.data.results[0].resourceURI,
+                urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
+                    return { type_: link.type, url: link.url };
+                }),
+                thumbnail: fetchResult.data.results[0].urls.map((tn: {path: String, extension: String}) => {
+                    return { path: tn.type, extension: tn.extension };
+                })
+            }
+
+            await characterRepository.createCharacter(obj);
 
         });
 

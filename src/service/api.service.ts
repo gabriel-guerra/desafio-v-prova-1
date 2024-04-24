@@ -34,11 +34,7 @@ class ApiService{
         }
 
         const promises = urls.map(
-            async (link: any) =>{
-                const response = await fetch(link);
-                const respJson = await response.json();
-                return respJson;
-            }
+            (link: any) => fetch(link).then((res) => res.json())
         );
 
         allItems = Promise.all(promises)
@@ -55,9 +51,8 @@ class ApiService{
     async fillSeries(){    
 
         const secretWars: any = await fetch(`http://gateway.marvel.com/v1/public/series/2063?${ts}&${apikey}&${hash}&limit=100`)
-        .then( async (res: Response) => {
-            return await res.json();
-        });
+            .then((res) => res.json()
+        );
 
         let comics: any;
         let stories: any;
@@ -68,29 +63,24 @@ class ApiService{
         Promise.all([
 
             comics = await fetch(secretWars.data.results[0].comics.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            }),
+                .then((res) => res.json()
+            ),
 
             stories = await fetch(secretWars.data.results[0].stories.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            }),
+                .then((res) => res.json()
+            ),
 
             characters = await fetch(secretWars.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            }),
+                .then((res) => res.json()
+            ),
 
             creators = await fetch(secretWars.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            }),
+                .then((res) => res.json()
+            ),
 
             events = await fetch(secretWars.data.results[0].events.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            })
+                .then((res) => res.json()
+            )
 
         ]);
 
@@ -127,9 +117,8 @@ class ApiService{
         comics.forEach(async (element: any) => {
            
             const fetchResult: any = await fetch(`http://gateway.marvel.com/v1/public/comics/${element.id}?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            });
+                .then((res) => res.json()
+            );
 
             let series: any;
             let creators: any;
@@ -140,29 +129,24 @@ class ApiService{
             Promise.all([
     
                 series = await fetch(fetchResult.data.results[0].series.resourceURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then( async (res: Response) => {
-                    return await res.json();
-                }),
+                    .then((res) => res.json()
+                ),
 
                 creators = await fetch(fetchResult.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then( async (res: Response) => {
-                    return await res.json();
-                }),
+                    .then((res) => res.json()
+                ),
     
                 characters = await fetch(fetchResult.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then( async (res: Response) => {
-                    return await res.json();
-                }),
+                    .then((res) => res.json()
+                ),
 
                 stories = await fetch(fetchResult.data.results[0].stories.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then( async (res: Response) => {
-                    return await res.json();
-                }),
+                    .then((res) => res.json()
+                ),
 
                 events = await fetch(fetchResult.data.results[0].events.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then( async (res: Response) => {
-                    return await res.json();
-                })
+                    .then((res) => res.json()
+                )
     
             ]);
 
@@ -208,9 +192,8 @@ class ApiService{
         characters.forEach(async (element: any) => {
            
             const fetchResult: any = await fetch(`http://gateway.marvel.com/v1/public/characters/${element.id}?${ts}&${apikey}&${hash}&limit=100`)
-            .then( async (res: Response) => {
-                return await res.json();
-            });
+                .then( async (res) => res.json()
+            );
 
             let series: any;
             let comics: any;

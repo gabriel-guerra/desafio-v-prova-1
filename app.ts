@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './router';
-import apiController from './src/service/api.service';
 
 class App{
     express: express.Application;
@@ -30,7 +29,6 @@ class App{
         this.middleware();
         this.database();
         this.router();
-        apiController.exec();
     }
 
 }

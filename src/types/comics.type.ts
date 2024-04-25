@@ -7,7 +7,8 @@ export interface comicsType{
     pageCount: Number,
     textObjects: [{ type_: string, language: String, text: String }],
     resourceURI: String,
+    dates: [{ type_: String, date: Date }],
     prices: [{ type_: String, price: Number }],
-    creators: [{ id: Number, name: String, }],
+    creators: [{ id: Number, fullName: String, role: String}],
     characters: [{ id: Number, fullName: String, }]
 }

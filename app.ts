@@ -10,7 +10,7 @@ class App{
     }
 
     private async database(){        
-        let collectionName = 'desafio-v-gs'
+        let collectionName = 'Desafio-V-SecretWars'
         try{
             mongoose.set("strictQuery", true);
             await mongoose.connect(`mongodb://0.0.0.0:27017/${collectionName}`);

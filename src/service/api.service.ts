@@ -16,8 +16,8 @@ class ApiService{
 
             Promise.all([
 
-                this.fillComics(serie.comics),
-                this.fillCharacters(serie.characters)
+                //this.fillComics(serie.comics),
+                //this.fillCharacters(serie.characters)
 
             ])
         }
@@ -31,10 +31,8 @@ class ApiService{
         );
 
         let comics: any;
-        let stories: any;
         let characters: any;
         let creators: any;
-        let events: any;
 
         Promise.all([
 
@@ -43,10 +41,6 @@ class ApiService{
             ),
 
             characters = await fetch(secretWars.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                .then((res) => res.json()
-            ),
-
-            creators = await fetch(secretWars.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
                 .then((res) => res.json()
             )
 
@@ -65,8 +59,11 @@ class ApiService{
             characters: characters.data.results.map((character: { id: Number, name: String; }) => {
                 return { id: character.id, name: character.name};
             }),
-            creators: creators.data.results.map((creator: { id: Number, fullName: String; }) => {
-                return { id: creator.id, fullName: creator.fullName };
+            creators: secretWars.data.results[0].creators.items.map((creator: { resourceURI: String, name: String, role: String}) => {
+                const array = creator.resourceURI.split('/');
+                const id = array[array.length -1];
+
+                return { id: id, fullName: creator.name, role: creator.role};
             })
         }
 
@@ -87,10 +84,6 @@ class ApiService{
 
             Promise.all([
     
-                creators = await fetch(fetchResult.data.results[0].creators.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
-                    .then((res) => res.json()
-                ),
-    
                 characters = await fetch(fetchResult.data.results[0].characters.collectionURI + `?${ts}&${apikey}&${hash}&limit=100`)
                     .then((res) => res.json()
                 )
@@ -108,11 +101,17 @@ class ApiService{
                     return { type_: textObject.type, language: textObject.language, text: textObject.text };
                 }),
                 resourceURI: fetchResult.data.results[0].resourceURI,
+                dates: fetchResult.data.results[0].dates.map((date: {type: String, date: Date}) => {
+                    return { type_: date.type, date: date.date };
+                }),
                 prices: fetchResult.data.results[0].prices.map((price: {type: String, price: Number}) => {
                     return { type_: price.type, price: price.price };
                 }),
-                creators: creators.data.results.map((creator: { id: Number, fullName: String; }) => {
-                    return { id: creator.id, fullName: creator.fullName };
+                creators: fetchResult.data.results[0].creators.items.map((creator: { resourceURI: String, name: String, role: String}) => {
+                    const array = creator.resourceURI.split('/');
+                    const id = array[array.length -1];
+    
+                    return { id: id, fullName: creator.name, role: creator.role};
                 }),
                 characters: characters.data.results.map((character: { id: Number, name: String; }) => {
                     return { id: character.id, name: character.name};
@@ -133,7 +132,6 @@ class ApiService{
                 .then((res) => res.json()
             );
 
-
             let obj = { 
                 id: fetchResult.data.results[0].id, 
                 name: fetchResult.data.results[0].name,
@@ -143,7 +141,7 @@ class ApiService{
                     return { type_: link.type, url: link.url };
                 }),
                 thumbnail: fetchResult.data.results[0].urls.map((tn: {path: String, extension: String}) => {
-                    return { path: tn.type, extension: tn.extension };
+                    return { path: tn.path, extension: tn.extension };
                 })
             }
 

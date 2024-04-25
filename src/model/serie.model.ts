@@ -9,7 +9,7 @@ const serieKeys = {
     endYear: Number,
     comics: [{id: Number, title: String}], 
     characters: [{id: Number, name: String}],
-    creators: [{id: Number, fullName: String}]
+    creators: [{id: Number, fullName: String, role: String}]
   }
 
 const serieModel = new Schema (

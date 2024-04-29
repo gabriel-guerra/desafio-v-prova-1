@@ -16,7 +16,7 @@ class ApiService{
 
             Promise.all([
 
-                //this.fillComics(serie.comics),
+                this.fillComics(serie.comics),
                 //this.fillCharacters(serie.characters)
 
             ])
@@ -101,7 +101,10 @@ class ApiService{
                     return { type_: textObject.type, language: textObject.language, text: textObject.text };
                 }),
                 resourceURI: fetchResult.data.results[0].resourceURI,
-                dates: fetchResult.data.results[0].dates.map((date: {type: String, date: Date}) => {
+                dates: fetchResult.data.results[0].dates.map((date: {type: String, date: String}) => {
+                    if(date.date === "-0001-11-30T00:00:00-0500"){
+                        date.date = "0001-11-30T00:00:00-0500"
+                    }
                     return { type_: date.type, date: date.date };
                 }),
                 prices: fetchResult.data.results[0].prices.map((price: {type: String, price: Number}) => {

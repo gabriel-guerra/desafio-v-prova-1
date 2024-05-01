@@ -22,8 +22,8 @@ class CharacterService {
         return updateCharacter
     }
 
-    async delete(id:any){
-        return await characterRepository.delete(id)
+    async delete(_id:any){
+        return await characterRepository.delete(_id)
     }
 }
 

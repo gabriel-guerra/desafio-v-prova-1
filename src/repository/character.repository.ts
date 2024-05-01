@@ -19,23 +19,13 @@ class CharacterRepository{
 
     async update(_id: String, character: characterType){
         const updateCharacter = await characterModel.findByIdAndUpdate(_id, character, {new: true});
-            
-        /* {
-            id: Number,
-            name: String,
-            description: String,
-            resourceURI: String,
-            urls: [{ type_: String, url: String }],
-            thumbnail: { path: String, extension: String }
-        }, */  
-
-        return updateCharacter
+        return updateCharacter ? updateCharacter : "Personagem não encontrado"
     }
 
-    async delete(id:String){
+    async delete(_id:String){
         try {
-            await characterModel.findByIdAndDelete(id)
-            return "Character Removido"
+            const character = await characterModel.findByIdAndDelete(_id)
+            return character ? "Personagem Removido" : "Personagem não encontrado"
         } catch (error) {
             throw new Error(`Não foi possível remover ${error}`)
         }

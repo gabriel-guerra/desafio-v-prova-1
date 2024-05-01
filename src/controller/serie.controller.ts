@@ -20,13 +20,17 @@ class SerieController{
     }
 
     async update(req: Request, res: Response) {
-        const updatedSerie = await serieService.update(parseInt(req.params.id), req.body)
-        return res.json(updatedSerie)
+        const serie = await serieService.findById(parseInt(req.params.id))
+        req.body.id = serie?.id;
+
+        const updatedSerie = await serieService.update(serie?._id, req.body)
+        return typeof(updatedSerie) === 'string' ? res.status(404).send(updatedSerie) : res.json(updatedSerie);
     }
 
     async delete(req: Request, res: Response) {
-        const deleteSerie = await serieService.delete(parseInt(req.params.id))
-        return res.json(deleteSerie)
+        const serie = await serieService.findById(parseInt(req.params.id))
+        const deleteSerie = await serieService.delete(serie?._id)
+        return deleteSerie.includes('não encontrad') ? res.status(404).send(deleteSerie) : res.send(deleteSerie)
     }
 
 }

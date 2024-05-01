@@ -13,19 +13,19 @@ class SerieRepository{
     }
 
     async findById(id: Number){
-        const serie = await serieModel.find({id: id})
+        const serie = await serieModel.findOne({id: id})
         return serie
     }
 
-    async update(id: Number, serie: serieType){
-        const updateSerie = await serieModel.findByIdAndUpdate(id, serie, {new: true});
-        return updateSerie
+    async update(_id: String, serie: serieType){
+        const updateSerie = await serieModel.findByIdAndUpdate(_id, serie, {new: true});
+        return updateSerie ? updateSerie : "Série não encontrada"
     }
 
     async delete(id:Number){
         try {
-            await serieModel.findByIdAndDelete(id)
-            return "Serie Removida"
+            const serie = await serieModel.findByIdAndDelete(id);
+            return serie ? "Serie Removida" : "Serie não encontrada"
         } catch (error) {
             throw new Error(`Não foi possível remover ${error}`)
         }

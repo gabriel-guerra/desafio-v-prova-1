@@ -1,4 +1,4 @@
-import { Request, Response, request, response} from 'express';
+import { Request, Response } from 'express';
 import characterService from "../service/character.service";
 
 class CharacterController {
@@ -20,14 +20,16 @@ class CharacterController {
 
     async update(req: Request, res: Response) {
         const character = await characterService.findById(parseInt(req.params.id))
+        req.body.id = character?.id;
+
         const updatedCharacter = await characterService.update(character?._id, req.body)
-        return res.json(updatedCharacter)
+        return typeof(updatedCharacter) === 'string' ? res.status(404).send(updatedCharacter) : res.json(updatedCharacter);
     }
 
     async delete(req: Request, res: Response) {
         const character = await characterService.findById(parseInt(req.params.id))
         const deleteCharacter = await characterService.delete(character?._id)
-        return res.send(deleteCharacter)
+        return deleteCharacter.includes('não encontrad') ? res.status(404).send(deleteCharacter) : res.send(deleteCharacter)
     }
 }
 

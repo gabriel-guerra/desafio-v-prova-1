@@ -18,12 +18,12 @@ class SerieService{
         return findedCharacter
     }
 
-    async update(id: Number, serie: serieType){
-        const updateCharacter = await serieRepository.update(id, serie);
+    async update(_id: any, serie: serieType){
+        const updateCharacter = await serieRepository.update(_id, serie);
         return updateCharacter
     }
 
-    async delete(id:Number){
+    async delete(id:any){
         return await serieRepository.delete(id)
     }
 

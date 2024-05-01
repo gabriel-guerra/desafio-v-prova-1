@@ -11,7 +11,11 @@ router.get("/hello", hello.helloWorld);
 router.get("/fill-database", apiController.fillDatabase)
 
 //serie
-router.get("/series", serieController.findAll);
+router.get("/series", serieController.findAll)
+router.get('/series/:id', serieController.findById)
+router.post('/series/criar', serieController.create)
+router.put('/series/:id', serieController.update)
+router.delete('/series/:id', serieController.delete)
 
 //comics
 

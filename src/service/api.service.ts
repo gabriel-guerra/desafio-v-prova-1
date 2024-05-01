@@ -1,7 +1,8 @@
+import { ts, apikey, hash } from "../../config";
 import serieRepository from "../repository/serie.repository";
 import comicsRepository from "../repository/comics.repository";
-import { ts, apikey, hash } from "../../config";
 import characterRepository from "../repository/character.repository";
+import creatorRepository from "../repository/creator.repository";
 
 class ApiService{
 
@@ -17,7 +18,8 @@ class ApiService{
             Promise.all([
 
                 this.fillComics(serie.comics),
-                //this.fillCharacters(serie.characters)
+                this.fillCharacters(serie.characters),
+                this.fillCreators(serie.creators)
 
             ])
         }
@@ -32,7 +34,6 @@ class ApiService{
 
         let comics: any;
         let characters: any;
-        let creators: any;
 
         Promise.all([
 
@@ -79,7 +80,6 @@ class ApiService{
                 .then((res) => res.json()
             );
 
-            let creators: any;
             let characters: any;
 
             Promise.all([
@@ -149,6 +149,32 @@ class ApiService{
             }
 
             await characterRepository.createCharacter(obj);
+
+        });
+
+    }
+
+    async fillCreators(creators: any){
+
+        creators.forEach(async (element: any) => {
+           
+            const fetchResult: any = await fetch(`http://gateway.marvel.com/v1/public/creators/${element.id}?${ts}&${apikey}&${hash}&limit=100`)
+                .then((res) => res.json()
+            );
+
+            let obj = { 
+                id: fetchResult.data.results[0].id, 
+                fullName: fetchResult.data.results[0].fullName,
+                resourceURI: fetchResult.data.results[0].resourceURI,
+                thumbnail: fetchResult.data.results[0].urls.map((tn: {path: String, extension: String}) => {
+                    return { path: tn.path, extension: tn.extension };
+                }),
+                urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
+                    return { type_: link.type, url: link.url };
+                })
+            }
+
+            await creatorRepository.createCreator(obj);
 
         });
 

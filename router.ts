@@ -18,7 +18,7 @@ router.get("/series", serieController.findAll);
 //character
 router.get('/personagens', characterController.findAll)
 router.get('/personagens/:id', characterController.findById)
-router.post('/personagens', characterController.create)
+router.post('/personagens/criar', characterController.create)
 router.put('/personagens/:id', characterController.update)
 router.delete('/personagens/:id', characterController.delete)
 

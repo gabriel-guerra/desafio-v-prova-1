@@ -19,13 +19,15 @@ class CharacterController {
     }
 
     async update(req: Request, res: Response) {
-        const updatedCharacter = await characterService.update(parseInt(req.params.id), req.body)
+        const character = await characterService.findById(parseInt(req.params.id))
+        const updatedCharacter = await characterService.update(character?._id, req.body)
         return res.json(updatedCharacter)
     }
 
     async delete(req: Request, res: Response) {
-        const deleteCharacter = await characterService.delete(parseInt(req.params.id))
-        return res.json(deleteCharacter)
+        const character = await characterService.findById(parseInt(req.params.id))
+        const deleteCharacter = await characterService.delete(character?._id)
+        return res.send(deleteCharacter)
     }
 }
 

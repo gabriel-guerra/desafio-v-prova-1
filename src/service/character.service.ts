@@ -17,12 +17,12 @@ class CharacterService {
         return findedCharacter
     }
 
-    async update(id: Number, character: characterType){
-        const updateCharacter = await characterRepository.update(id, character);
+    async update(_id: any, character: characterType){
+        const updateCharacter = await characterRepository.update(_id, character);
         return updateCharacter
     }
 
-    async delete(id:Number){
+    async delete(id:any){
         return await characterRepository.delete(id)
     }
 }

@@ -13,12 +13,12 @@ class CharacterRepository{
     }
 
     async findById(id: Number){
-        const findedCharacter = await characterModel.find({id: id})
+        const findedCharacter = await characterModel.findOne({id: id})
         return findedCharacter
     }
 
-    async update(id: Number, character: characterType){
-        const updateCharacter = await characterModel.findByIdAndUpdate(id, character, {new: true});
+    async update(_id: String, character: characterType){
+        const updateCharacter = await characterModel.findByIdAndUpdate(_id, character, {new: true});
             
         /* {
             id: Number,
@@ -32,7 +32,7 @@ class CharacterRepository{
         return updateCharacter
     }
 
-    async delete(id:Number){
+    async delete(id:String){
         try {
             await characterModel.findByIdAndDelete(id)
             return "Character Removido"

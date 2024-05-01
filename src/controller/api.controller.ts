@@ -5,8 +5,11 @@ class ApiController{
 
     async fillDatabase(req: Request, res:Response){
         
-        await apiService.exec();
-        return res.sendStatus(200);
+        try{
+            return res.send(await apiService.exec());
+        }catch(error){
+            throw new Error(`Erro ao preencher o banco: ${error}`)
+        }
        
     }
 

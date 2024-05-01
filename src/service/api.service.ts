@@ -22,6 +22,10 @@ class ApiService{
                 this.fillCreators(serie.creators)
 
             ])
+
+            return "OK"
+        }else{
+            return "Banco de dados já preenchido."
         }
         
     }

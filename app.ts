@@ -9,14 +9,16 @@ class App{
         this.express.use(express.json());
     }
 
-    private async database(){        
-        let collectionName = 'Desafio-V-SecretWars'
-        try{
-            mongoose.set("strictQuery", true);
-            await mongoose.connect(`mongodb://0.0.0.0:27017/${collectionName}`);
-            console.log("Connected to database");
-        }catch(error){
-            console.error(`Connection with database failed, error: `, error);
+    private async database(){
+        if (process.env.NODE_ENV !== 'test'){
+            let collectionName = 'Desafio-V-SecretWars'
+            try{
+                mongoose.set("strictQuery", true);
+                await mongoose.connect(`mongodb://0.0.0.0:27017/${collectionName}`);
+                console.log("Connected to database");
+            }catch(error){
+                console.error(`Connection with database failed, error: `, error);
+            }
         }
     }
 

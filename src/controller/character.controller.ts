@@ -29,7 +29,7 @@ class CharacterController {
     async delete(req: Request, res: Response) {
         const character = await characterService.findById(parseInt(req.params.id))
         const deleteCharacter = await characterService.delete(character?._id)
-        return deleteCharacter.includes('não encontrad') ? res.status(404).send(deleteCharacter) : res.send(deleteCharacter)
+        return deleteCharacter.includes('não encontrado') ? res.status(404).send(deleteCharacter) : res.send(deleteCharacter)
     }
 }
 

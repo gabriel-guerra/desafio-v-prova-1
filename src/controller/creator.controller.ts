@@ -1,20 +1,20 @@
 import { Request, Response } from 'express';
-import CreatorService from "../services/creator.service";
+import CreatorService from "../service/creator.service";
 
 class CreatorController {
     async create (req: Request, res: Response) {
         const createdCreator = await CreatorService.create(req.body);
-        res.statues(201);
+        res.status(201);
         return res.json(createdCreator)
     }
 
     async findAll(req: Request, res: Response) {
-        const findedCreator = await CreatorService.find();
+        const findedCreator = await CreatorService.findAll();
         return res.json(findedCreator)
     }
 
     async findById(req: Request, res: Response) {
-        const findedCreator = await CreatorService.findById(req.params.id)
+        const findedCreator = await CreatorService.findById(parseInt(req.params.id))
         return res.json(findedCreator)
     }
 

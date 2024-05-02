@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./main.ts",
-    "test": "jest --debug"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

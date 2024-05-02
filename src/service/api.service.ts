@@ -147,9 +147,7 @@ class ApiService{
                 urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
                     return { type_: link.type, url: link.url };
                 }),
-                thumbnail: fetchResult.data.results[0].urls.map((tn: {path: String, extension: String}) => {
-                    return { path: tn.path, extension: tn.extension };
-                })
+                thumbnail: fetchResult.data.results[0].thumbnail
             }
 
             await characterRepository.createCharacter(obj);
@@ -170,9 +168,7 @@ class ApiService{
                 id: fetchResult.data.results[0].id, 
                 fullName: fetchResult.data.results[0].fullName,
                 resourceURI: fetchResult.data.results[0].resourceURI,
-                thumbnail: fetchResult.data.results[0].urls.map((tn: {path: String, extension: String}) => {
-                    return { path: tn.path, extension: tn.extension };
-                }),
+                thumbnail: fetchResult.data.results[0].thumbnail,
                 urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
                     return { type_: link.type, url: link.url };
                 })

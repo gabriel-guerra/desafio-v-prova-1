@@ -53,8 +53,10 @@ describe('Testes dos usuários', () => {
 
     it('Deve criar uma série', async() => {
 
+        const serieId = 10;
+
         const serieToCreate = {
-            id: 100, 
+            id: serieId, 
             title: "Serie 1",
             description: "Serie de quadrinhos",
             resourceURI: "https://google.com",
@@ -83,7 +85,7 @@ describe('Testes dos usuários', () => {
 
     it('Deve atualizar uma série', async () => {
         
-        const serieId = 200;
+        const serieId = 20;
 
         const serieToCreate = {
             id: serieId, 
@@ -98,15 +100,15 @@ describe('Testes dos usuários', () => {
         }
 
         const serieToUpdate = {
-            id: 999, 
+            id: 30, 
             title: "Atualização de série",
             description: "Nova atualização da série de quadrinhos",
             resourceURI: "https://translate.google.com",
             startYear: 2009,
             endYear: 2015,
-            comics: [{ id: 99, title: "Comic 99"}, {id: 98, title: "Comic 98"}],
-            characters: [{ id: 97, name: "Sargento"}, {id: 96, name: "Delegado"}],
-            creators: [{ id: 95, fullName: "Amanda Nunes", role: "Roteirista"}, {id: 94, fullName: "Patrícia Cardoso", role: "Designer"}]
+            comics: [{ id: 31, title: "Comic 99"}, {id: 32, title: "Comic 98"}],
+            characters: [{ id: 33, name: "Sargento"}, {id: 34, name: "Delegado"}],
+            creators: [{ id: 35, fullName: "Amanda Nunes", role: "Roteirista"}, {id: 36, fullName: "Patrícia Cardoso", role: "Designer"}]
         }
 
         await serieModel.create(serieToCreate);
@@ -126,9 +128,9 @@ describe('Testes dos usuários', () => {
 
     })
 
-    it('Deve Excluir um usuário', async () => {
+    it('Deve excluir uma série', async () => {
 
-        const serieId = 300;
+        const serieId = 40;
 
         const serieToCreate = {
             id: serieId, 

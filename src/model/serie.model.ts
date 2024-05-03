@@ -7,9 +7,9 @@ const serieKeys = {
     resourceURI: String,
     startYear: Number,
     endYear: Number,
-    comics: [{id: Number, title: String}], 
-    characters: [{id: Number, name: String}],
-    creators: [{id: Number, fullName: String, role: String}]
+    comics: [{_id: false, id: Number, title: String}], 
+    characters: [{_id: false, id: Number, name: String}],
+    creators: [{_id: false, id: Number, fullName: String, role: String}]
   }
 
 const serieModel = new Schema (

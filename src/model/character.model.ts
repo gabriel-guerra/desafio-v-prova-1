@@ -5,7 +5,7 @@ const characterKeys = {
     name: String,
     description: String,
     resourceURI: String,
-    urls: [{ type_: String, url: String }],
+    urls: [{ _id: false, type: {type: String}, url: String }],
     thumbnail: { path: String, extension: String}
 }
 

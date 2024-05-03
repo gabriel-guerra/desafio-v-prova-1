@@ -4,7 +4,7 @@ import databaseConfig from './databaseConfig'
 import { seriesMock } from './mock/series.mock';
 import serieModel from '../src/model/serie.model';
 
-describe('Testes dos usuários', () => {
+describe('Testes das séries', () => {
     
     beforeAll(() => {
         return databaseConfig.connectDatabase();
@@ -44,10 +44,9 @@ describe('Testes dos usuários', () => {
         expect(response.body.resourceURI).toEqual(foundSerie?.resourceURI)
         expect(response.body.startYear).toEqual(foundSerie?.startYear)
         expect(response.body.endYear).toEqual(foundSerie?.endYear)
-        //expect(response.body.comics).toEqual(foundSerie?.comics)
-        //expect(response.body.characters).toEqual(foundSerie?.characters)
-        //expect(response.body.creators).toEqual(foundSerie?.creators)
-        
+        expect(foundSerie!.comics).toMatchObject(response.body.comics)
+        expect(foundSerie!.characters).toMatchObject(response.body.characters)
+        expect(foundSerie!.creators).toMatchObject(response.body.creators)
     })
 
 
@@ -77,9 +76,9 @@ describe('Testes dos usuários', () => {
         expect(response.body.resourceURI).toEqual(serieToCreate.resourceURI)
         expect(response.body.startYear).toEqual(serieToCreate.startYear)
         expect(response.body.endYear).toEqual(serieToCreate.endYear)
-        //expect(response.body.comics).toEqual(serieToCreate.comics)
-        //expect(response.body.characters).toEqual(serieToCreate.characters)
-        //expect(response.body.creators).toEqual(serieToCreate.creators)
+        expect(serieToCreate.comics).toMatchObject(response.body.comics)
+        expect(serieToCreate.characters).toMatchObject(response.body.characters)
+        expect(serieToCreate.creators).toMatchObject(response.body.creators)
  
     })
 
@@ -122,9 +121,10 @@ describe('Testes dos usuários', () => {
         expect(response.body?.resourceURI).toBe(serieToUpdate.resourceURI);
         expect(response.body?.startYear).toEqual(serieToUpdate.startYear);
         expect(response.body?.endYear).toEqual(serieToUpdate.endYear);
-        //expect(response.body?.comics).toEqual(serieToUpdate.comics);
-        //expect(response.body?.characters).toEqual(serieToUpdate.characters);
-        //expect(response.body?.creators).toEqual(serieToUpdate.creators);
+        expect(serieToUpdate.comics).toMatchObject(response.body.comics)
+        expect(serieToUpdate.characters).toMatchObject(response.body.characters)
+        expect(serieToUpdate.creators).toMatchObject(response.body.creators)
+ 
 
     })
 

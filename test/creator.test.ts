@@ -2,9 +2,7 @@ import * as request from 'supertest';
 import app from '../app';
 import databaseConfig from './databaseConfig';
 import { creatorsMock } from './mock/creators.mock';
-import creatorModel from 'src/model/creator.model';
-import { comicsMock } from './mock/comics.mock';
-import comicsModel from '../src/model/comics.model';
+import creatorModel from '../src/model/creator.model';
 
 describe ('Teste dos usuários', async () => {
 
@@ -33,7 +31,7 @@ describe ('Teste dos usuários', async () => {
 
     it('Deve obter um Creator pelo ID', async () => {
         const response = await request.default(app).get(`/creator/${creatorsMock[0].id}`)
-        const FoundCreator = await creatorModel.findOne({id:comicsMock[0].id})
+        const FoundCreator = await creatorModel.findOne({id:creatorsMock[0].id})
 
         expect (response.status).toEqual(200)
         expect (response.body._id).toBeDefined();
@@ -85,7 +83,7 @@ describe ('Teste dos usuários', async () => {
             thumbnail: { path: 'https://url.thumbnail.com', extension: 'jpg'}
         }
 
-        await comicsModel.create(CreatorToCreate)
+        await creatorModel.create(CreatorToCreate)
         const response = await request.default(app).post(`/creator/${creatorsMock[0].id}`).send(CreatorToCreate)
 
         expect (response.status).toEqual(200)

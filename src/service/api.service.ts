@@ -102,17 +102,17 @@ class ApiService{
                 format: fetchResult.data.results[0].format,
                 pageCount: fetchResult.data.results[0].pageCount,
                 textObjects: fetchResult.data.results[0].textObjects.map((textObject: {type: String, language: String, text: String}) => {
-                    return { type_: textObject.type, language: textObject.language, text: textObject.text };
+                    return { type: textObject.type, language: textObject.language, text: textObject.text };
                 }),
                 resourceURI: fetchResult.data.results[0].resourceURI,
                 dates: fetchResult.data.results[0].dates.map((date: {type: String, date: String}) => {
                     if(date.date === "-0001-11-30T00:00:00-0500"){
                         date.date = "0001-11-30T00:00:00-0500"
                     }
-                    return { type_: date.type, date: date.date };
+                    return { type: date.type, date: date.date };
                 }),
                 prices: fetchResult.data.results[0].prices.map((price: {type: String, price: Number}) => {
-                    return { type_: price.type, price: price.price };
+                    return { type: price.type, price: price.price };
                 }),
                 creators: fetchResult.data.results[0].creators.items.map((creator: { resourceURI: String, name: String, role: String}) => {
                     const array = creator.resourceURI.split('/');
@@ -145,7 +145,7 @@ class ApiService{
                 description: fetchResult.data.results[0].description,
                 resourceURI: fetchResult.data.results[0].resourceURI,
                 urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
-                    return { type_: link.type, url: link.url };
+                    return { type: link.type, url: link.url };
                 }),
                 thumbnail: fetchResult.data.results[0].thumbnail
             }
@@ -170,7 +170,7 @@ class ApiService{
                 resourceURI: fetchResult.data.results[0].resourceURI,
                 thumbnail: fetchResult.data.results[0].thumbnail,
                 urls: fetchResult.data.results[0].urls.map((link: {type: String, url: String}) => {
-                    return { type_: link.type, url: link.url };
+                    return { type: link.type, url: link.url };
                 })
             }
 

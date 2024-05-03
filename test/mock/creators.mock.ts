@@ -5,7 +5,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/2056",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/2056/nel_yomtov?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -19,7 +19,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/1759",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/1759/joe_rosen?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -33,7 +33,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/6758",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/6758/christie_scheele?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -47,7 +47,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/13127",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/13127/emily_newcomen?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -61,7 +61,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/1247",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/1247/bob_layton?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -75,7 +75,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/9565",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/9565/tom_defalco?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -89,7 +89,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/2038",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/2038/john_beatty?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -103,7 +103,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/11063",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/11063/terry_kevin_austin?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ],
@@ -117,7 +117,7 @@ const creatorsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/creators/3447",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/creators/3447/michael_zeck?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382"
             }
         ]

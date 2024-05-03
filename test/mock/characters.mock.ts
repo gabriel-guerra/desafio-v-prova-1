@@ -10,15 +10,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009664",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1009664/thor/featured?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Thor_(Thor_Odinson)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009664/thor?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -34,15 +34,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009546",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009546/rogue?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Rogue?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009546/rogue?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -58,15 +58,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009281",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009281/doctor_doom?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Doctor_Doom_%28Victor_von_Doom%29?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009281/doctor_doom?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -82,15 +82,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009459",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/38/mr_fantastic?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Mister_Fantastic?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009459/mr_fantastic?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -106,15 +106,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009417",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009417/magneto?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Magneto_(Max_Eisenhardt)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009417/magneto?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -130,15 +130,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009338",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009338/hawkeye?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Hawkeye_(Clint_Barton)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009338/hawkeye?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -154,15 +154,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009610",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/54/spider-man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Spider-Man_(Peter_Parker)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009610/spider-man_peter_parker?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -178,15 +178,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009220",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/8/captain_america?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Captain_America_(Steve_Rogers)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009220/captain_america?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -202,15 +202,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009257",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009257/cyclops?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Cyclops_(Scott_Summers)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009257/cyclops?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -226,15 +226,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009148",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/84/absorbing_man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Absorbing_Man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009148/absorbing_man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -250,15 +250,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009504",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1810/professor_x?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Professor_X?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009504/professor_x?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -274,15 +274,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009356",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/26/human_torch?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Human_Torch_%28Johnny_Storm%29?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009356/human_torch?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -298,15 +298,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009351",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/25/hulk?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Hulk_(Bruce_Banner)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009351/hulk?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -322,15 +322,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009276",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/565/doctor_octopus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Doctor_Octopus_%28Otto_Octavius%29?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009276/doctor_octopus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -346,15 +346,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009707",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009707/wasp?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Wasp?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009707/wasp?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -370,15 +370,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009718",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/66/wolverine?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Wolverine_(James_Howlett)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009718/wolverine?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -394,15 +394,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011138",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/260/beyonder?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Maker?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1011138/beyonder?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -418,15 +418,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009243",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009243/colossus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Colossus_(Piotr_Rasputin)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009243/colossus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -442,15 +442,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009583",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/51/she-hulk?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/She-Hulk_(Jennifer_Walters)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009583/she-hulk_jennifer_walters?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -466,15 +466,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009685",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/61/ultron?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Ultron?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009685/ultron?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -490,15 +490,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009472",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009472/nightcrawler?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Nightcrawler?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009472/nightcrawler?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -514,15 +514,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009224",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1009224/captain_marvel_mar-vell/featured?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Captain_Marvel_(Mar-Vell)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009224/captain_marvel_mar-vell?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -538,15 +538,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009312",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009312/galactus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Galactus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009312/galactus?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -562,15 +562,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009405",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1266/lockheed?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Lockheed?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009405/lockheed?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -586,15 +586,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/29/iron_man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Iron_Man_(Anthony_Stark)?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009368/iron_man?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -610,15 +610,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009390",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1156/klaw?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Klaw?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009390/klaw?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -634,15 +634,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009726",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009726/x-men?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/X-Men?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009726/x-men?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -658,15 +658,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009404",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/characters/1260/lizard?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Lizard_%28Curtis_Connors%29?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009404/lizard?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -682,15 +682,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009662",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009662/thing?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Thing_%28Benjamin_Grimm%29?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009662/thing?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]
@@ -706,15 +706,15 @@ const charactersMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009629",
         "urls": [
             {
-                "type_": "detail",
+                "type": "detail",
                 "url": "http://marvel.com/comics/characters/1009629/storm?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "wiki",
+                "type": "wiki",
                 "url": "http://marvel.com/universe/Storm?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             },
             {
-                "type_": "comiclink",
+                "type": "comiclink",
                 "url": "http://marvel.com/comics/characters/1009629/storm?utm_campaign=apiRef&utm_source=83d9fb1f0d0e5ad1f51ad6c53b1b1382",
             }
         ]

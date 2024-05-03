@@ -42,7 +42,7 @@ describe('Testes dos usuários', () => {
         expect(response.body.name).toEqual(foundCharacter?.name)
         expect(response.body.description).toEqual(foundCharacter?.description)
         expect(response.body.resourceURI).toEqual(foundCharacter?.resourceURI)
-        //expect(response.body.urls).toEqual(foundCharacter?.urls)
+        expect(foundCharacter?.urls).toMatchObject(response.body.urls)
         expect(response.body.thumbnail).toEqual(foundCharacter?.thumbnail)
         
     })
@@ -69,7 +69,7 @@ describe('Testes dos usuários', () => {
         expect(response.body.name).toEqual(characterToCreate.name)
         expect(response.body.description).toEqual(characterToCreate.description)
         expect(response.body.resourceURI).toEqual(characterToCreate.resourceURI)
-        //expect(response.body.urls).toEqual(characterToCreate.urls)
+        expect(characterToCreate.urls).toMatchObject(response.body.urls)
         expect(response.body.thumbnail).toEqual(characterToCreate.thumbnail)
  
     })
@@ -105,7 +105,7 @@ describe('Testes dos usuários', () => {
         expect(response.body.name).toEqual(characterToUpdate.name)
         expect(response.body.description).toEqual(characterToUpdate.description)
         expect(response.body.resourceURI).toEqual(characterToUpdate.resourceURI)
-        //expect(response.body.urls).toEqual(characterToUpdate.urls)
+        expect(characterToUpdate.urls).toMatchObject(response.body.urls)
         expect(response.body.thumbnail).toEqual(characterToUpdate.thumbnail)
 
     })

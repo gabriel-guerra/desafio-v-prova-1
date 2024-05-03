@@ -8,7 +8,7 @@ const comicsMock = [
         "pageCount": 52,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "NOTHING TO FEAR The heroes have defeated their enemies--all save one. Now, with the stolen power of The Beyonder himself, Doctor Doom strikes! Who can stop him now?"
             }
@@ -16,29 +16,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10583",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1985-04-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2009-11-20T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -164,7 +164,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "PRISONERS OF WAR Doctor Doom brings Ultron back online to battle the champions of Earth! Meanwhile, Magneto takes the lone-wolf route!"
             }
@@ -172,29 +172,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10584",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-06-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -328,12 +328,12 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "SITUATION: HOPELESS The heroes' HQ has been destroyed! Thor has been captured by Enchantress and taken straight to the villains! Doctor Doom scores his first kill!"
             },
             {
-                "type_": "70th_winner_desc",
+                "type": "70th_winner_desc",
                 "language": "en-us",
                 "text": "Bob Layton delivers another winner by combining simple, strong text with the immensely intense image of Hulk holding 150,000,000,000 tons of rock from crushing his fellow heroes."
             }
@@ -341,29 +341,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10586",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-08-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -493,12 +493,12 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "DEATH TO THE BEYONDER Though the heroes have successfully driven Galactus away, they find that their seeming victory has only sealed their fate."
             },
             {
-                "type_": "70th_winner_desc",
+                "type": "70th_winner_desc",
                 "language": "en-us",
                 "text": "Leave it to Mike Zeck to draw a Dr. Doom who looks both like he's been beaten to within an inch of his life, yet could easily take on a god. Hmm...he kinda did, didn't he?"
             }
@@ -506,29 +506,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10581",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1985-02-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2009-08-11T04:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-31T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -663,7 +663,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "THE BATTLE OF THE FOUR ARMIES The villains have the upper hand! As they plan their final strike, Galactus' mysterious vigil comes to a surprising end..."
             }
@@ -671,29 +671,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10587",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-09-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -823,12 +823,12 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "INVASION As the battle-weary heroes recuperate and repair their gear, Spider-Man makes make a discovery that will change his life and his costume!"
             },
             {
-                "type_": "70th_winner_desc",
+                "type": "70th_winner_desc",
                 "language": "en-us",
                 "text": "As awesome and striking as Spider-Man's new black costume is, you can't help but stare at the crazy super-brawl taking place behind Spidey. Artist Mike Zeck nailed this cover, without a doubt."
             }
@@ -836,29 +836,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10590",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-12-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -988,7 +988,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "BERSERKER The death of an Avenger! The X-Men's greatest battle! And, introducing the all-new Spider-Woman!"
             }
@@ -996,29 +996,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10589",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-11-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2008-09-17T04:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -1157,7 +1157,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "...AND DUST TO DUST The penultimate chapter of SECRET WARS is here! The face of Doom is revealed!"
             }
@@ -1165,29 +1165,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10582",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1985-03-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2009-11-06T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-31T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -1313,12 +1313,12 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "THE WAR BEGINS Earth's heroes have been whisked away to a mysterious construct in space, but they are not alone. Earth's villains have also appeared. Who is to blame for this meeting of good and evil?"
             },
             {
-                "type_": "70th_winner_desc",
+                "type": "70th_winner_desc",
                 "language": "en-us",
                 "text": "Mike Zeck has gotten some of Marvel's biggest and baddest heroes riled up and looking for a scrape.  You don't want to mess with this bunch, trust us.  The Beyonder learned that the hard way."
             }
@@ -1326,29 +1326,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10580",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-05-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -1504,7 +1504,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "ASSAULT ON GALACTUS As the heroes make their last ditch effort against Galactus, Doctor Doom seizes the opportunity to grind them all under his heel."
             }
@@ -1512,29 +1512,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10591",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1985-01-10T05:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2009-08-04T04:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -1660,7 +1660,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "TEMPEST WITHOUT, CRISIS WITHIN Doctor Doom creates two new villains Called Volcana and Titania to take the heroes down! Meanwhile, Spider-Man battles the X-Men!"
             }
@@ -1668,29 +1668,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10585",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-07-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-13T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-30T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],
@@ -1819,7 +1819,7 @@ const comicsMock = [
         "pageCount": 36,
         "textObjects": [
             {
-                "type_": "issue_preview_text",
+                "type": "issue_preview_text",
                 "language": "en-us",
                 "text": "A LITTLE DEATH Galactus prepares to destroy both the heroes and the villians! Now, as both sides of the engagement plan their next move, two MIA soldiers make their return!"
             }
@@ -1827,29 +1827,29 @@ const comicsMock = [
         "resourceURI": "http://gateway.marvel.com/v1/public/comics/10588",
         "dates": [
             {
-                "type_": "onsaleDate",
+                "type": "onsaleDate",
                 "date": "1984-10-10T04:00:00.000Z"
             },
             {
-                "type_": "focDate",
+                "type": "focDate",
                 "date": "0001-11-30T05:00:00.000Z"
             },
             {
-                "type_": "unlimitedDate",
+                "type": "unlimitedDate",
                 "date": "2007-11-28T05:00:00.000Z"
             },
             {
-                "type_": "digitalPurchaseDate",
+                "type": "digitalPurchaseDate",
                 "date": "2011-08-31T04:00:00.000Z"
             }
         ],
         "prices": [
             {
-                "type_": "printPrice",
+                "type": "printPrice",
                 "price": 0
             },
             {
-                "type_": "digitalPurchasePrice",
+                "type": "digitalPurchasePrice",
                 "price": 1.99
             }
         ],

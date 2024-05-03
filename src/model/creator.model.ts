@@ -5,7 +5,7 @@ const creatorKeys = {
     fullName: String,
     resourceURI: String,
     thumbnail: { path: String, extension: String},
-    urls: [{ type_: String, url: String }]
+    urls: [{ _id: false, type: {type: String}, url: String }]
 }
 
 const creatorModel = new Schema (

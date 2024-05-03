@@ -32,3 +32,5 @@ class ComicsController {
         return deleteComics.includes('não encontrado') ? res.status(404).send(deleteComics) : res.send(deleteComics)
     }
 }
+
+export default new ComicsController();

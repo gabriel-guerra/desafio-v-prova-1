@@ -3,6 +3,7 @@ import hello from './src/hello';
 import serieController from './src/controller/serie.controller';
 import apiController from './src/controller/api.controller';
 import characterController from './src/controller/character.controller';
+import comicController from 'src/controller/comic.controller';
 
 const router = Router();
 
@@ -28,4 +29,10 @@ router.delete('/personagens/:id', characterController.delete)
 
 //creator
 
+//comic
+router.get('/comics', ComicsController.findAll)
+router.get('/comics/:id', ComicsController.findAll)
+router.post('/comics/criar', ComicsController.findAll)
+router.put('/comics/:id', ComicsController.findAll)
+router.delete('/comics/:id', ComicsController.findAll)
 export { router };

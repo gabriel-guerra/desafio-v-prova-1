@@ -3,8 +3,8 @@ import hello from './src/hello';
 import serieController from './src/controller/serie.controller';
 import apiController from './src/controller/api.controller';
 import characterController from './src/controller/character.controller';
-import comicController from 'src/controller/comic.controller';
-import creatorController from 'src/controller/creator.controller';
+import comicController from './src/controller/comic.controller';
+import creatorController from './src/controller/creator.controller';
 
 const router = Router();
 

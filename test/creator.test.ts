@@ -4,7 +4,7 @@ import databaseConfig from './databaseConfig';
 import { creatorsMock } from './mock/creators.mock';
 import creatorModel from 'src/model/creator.model';
 import { comicsMock } from './mock/comics.mock';
-import comicsModel from 'src/model/comics.model';
+import comicsModel from '../src/model/comics.model';
 
 describe ('Teste dos usuários', async () => {
 

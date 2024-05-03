@@ -2,7 +2,7 @@ import * as request from 'supertest';
 import app from '../app';
 import databaseConfig from './databaseConfig'
 import { comicsMock } from './mock/comics.mock';
-import comicsModel from 'src/model/comics.model';
+import comicsModel from '../comics.model';
 
 
 describe('Testes dos Usuário', () => {

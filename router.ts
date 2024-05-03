@@ -4,6 +4,7 @@ import serieController from './src/controller/serie.controller';
 import apiController from './src/controller/api.controller';
 import characterController from './src/controller/character.controller';
 import comicController from 'src/controller/comic.controller';
+import creatorController from 'src/controller/creator.controller';
 
 const router = Router();
 
@@ -20,10 +21,10 @@ router.delete('/series/:id', serieController.delete)
 
 //comic
 router.get('/comics', comicController.findAll)
-router.get('/comics/:id', comicController.findAll)
-router.post('/comics/criar', comicController.findAll)
-router.put('/comics/:id', comicController.findAll)
-router.delete('/comics/:id', comicController.findAll)
+router.get('/comics/:id', comicController.findById)
+router.post('/comics/criar', comicController.create)
+router.put('/comics/:id', comicController.update)
+router.delete('/comics/:id', comicController.delete)
 
 //character
 router.get('/personagens', characterController.findAll)
@@ -33,10 +34,10 @@ router.put('/personagens/:id', characterController.update)
 router.delete('/personagens/:id', characterController.delete)
 
 //creator
-router.get('/comics', comicController.findAll)
-router.get('/comics/:id', comicController.findAll)
-router.post('/comics/criar', comicController.findAll)
-router.put('/comics/:id', comicController.findAll)
-router.delete('/comics/:id', comicController.findAll)
+router.get('/creator', creatorController.findAll)
+router.get('/creator/:id', creatorController.findById)
+router.post('/creator/criar', creatorController.create)
+router.put('/creator/:id', creatorController.update)
+router.delete('/creator/:id', creatorController.delete)
 
 export { router };

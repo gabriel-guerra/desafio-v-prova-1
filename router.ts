@@ -18,7 +18,12 @@ router.post('/series/criar', serieController.create)
 router.put('/series/:id', serieController.update)
 router.delete('/series/:id', serieController.delete)
 
-//comics
+//comic
+router.get('/comics', comicController.findAll)
+router.get('/comics/:id', comicController.findAll)
+router.post('/comics/criar', comicController.findAll)
+router.put('/comics/:id', comicController.findAll)
+router.delete('/comics/:id', comicController.findAll)
 
 //character
 router.get('/personagens', characterController.findAll)
@@ -28,11 +33,10 @@ router.put('/personagens/:id', characterController.update)
 router.delete('/personagens/:id', characterController.delete)
 
 //creator
+router.get('/comics', comicController.findAll)
+router.get('/comics/:id', comicController.findAll)
+router.post('/comics/criar', comicController.findAll)
+router.put('/comics/:id', comicController.findAll)
+router.delete('/comics/:id', comicController.findAll)
 
-//comic
-router.get('/comics', ComicsController.findAll)
-router.get('/comics/:id', ComicsController.findAll)
-router.post('/comics/criar', ComicsController.findAll)
-router.put('/comics/:id', ComicsController.findAll)
-router.delete('/comics/:id', ComicsController.findAll)
 export { router };

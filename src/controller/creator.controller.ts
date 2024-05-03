@@ -32,3 +32,5 @@ class CreatorController {
         return deleteCreator.includes('não encontrado') ? res.status(404).send(deleteCreator) : res.send(deleteCreator)
     }
 }
+
+export default new CreatorController();

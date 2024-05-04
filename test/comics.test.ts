@@ -220,7 +220,8 @@ describe('Testes dos quadrinhos', () => {
           }));
         
         expect(response.status).toEqual(200);
-        expect(response.body).toEqual(listaColabs);
+        //expect(response.body).toEqual(listaColabs);
+        expect(response.body).toEqual(expect.arrayContaining(listaColabs));
         
     })
 

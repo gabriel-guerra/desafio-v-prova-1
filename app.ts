@@ -16,7 +16,7 @@ class App{
                     version: '1.0.0'
                 }
             },
-            apis: ['./documentation/serie-doc.yaml', './documentation/character-doc.yaml']
+            apis: ['./documentation/serie-doc.yaml', './documentation/character-doc.yaml', './documentation/comics-doc.yaml', './documentation/creator-doc.yaml']
     }
 
     const swaggerDocs = swaggerJsDoc(swaggerOptions);

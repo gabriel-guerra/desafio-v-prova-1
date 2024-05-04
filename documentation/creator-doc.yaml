@@ -1,0 +1,136 @@
+swagger: '2.0'
+paths:
+  /creator:
+    get:
+      summary: Busca todos os criadores.
+      tags:
+        - Criador
+      description: Faz uma consulta a base de dados de criadores retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /creator/criar:
+    post:
+      summary: Recebe as informações de um criador e armazena os dados.
+      tags:
+        - Criador
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Criador
+          description: Informações do criador a ser cadastrado.
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                minimum: 1
+                description: id atribuído ao criador.
+              fullName:
+                type: string
+                description: Nome completo do criador.
+              resourceURI:
+                type: string
+                description: URI da criador.
+              thumbnail:
+                type: object
+                properties:
+                  path:
+                    type: string
+                    description: Caminho da thumbnail do criador.
+                  extension:
+                    type: string
+                    description: Extensão da thumbnail do criador.
+              urls:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da url.
+                    url:
+                      type: string
+                      description: URL do criador.
+      responses:
+        '201':
+          description: Criado
+  /creator/{id}:
+    get:
+      summary: Busca um criador por seu id.
+      tags:
+        - Criador
+      description: Faz uma consulta a base de dados de criadores recebendo um id como parâmetro e retornando o registro caso encontre.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Sucesso
+    put:
+      summary: Atualiza as informações de um criador.
+      tags:
+        - Criador
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+        - in: body
+          name: Criador
+          description: Informações do criador a ser atualizado.
+          required: true
+          schema:
+            type: object
+            properties:
+              fullName:
+                type: string
+                description: Nome completo do criador.
+              resourceURI:
+                type: string
+                description: URI da criador.
+              thumbnail:
+                type: object
+                properties:
+                  path:
+                    type: string
+                    description: Caminho da thumbnail do criador.
+                  extension:
+                    type: string
+                    description: Extensão da thumbnail do criador.
+              urls:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da url.
+                    url:
+                      type: string
+                      description: URL do criador.
+      responses:
+        '200':
+          description: Sucesso
+    delete:
+      summary: Remove um criador pelo id.
+      tags:
+        - Criador
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: id do criador.
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Criador não encontrado
+  

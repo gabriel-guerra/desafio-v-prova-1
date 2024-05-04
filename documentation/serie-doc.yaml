@@ -3,6 +3,8 @@ paths:
   /series:
     get:
       summary: Busca todas as séries.
+      tags:
+        - Serie
       description: Faz uma consulta a base de dados de séries retornando todos os dados cadastrados.
       responses:
         '200':
@@ -10,6 +12,8 @@ paths:
   /series/criar:
     post:
       summary: Recebe as informações de uma série e armazena os dados.
+      tags:
+        - Serie
       consumes:
         - application/json
       parameters:
@@ -86,6 +90,8 @@ paths:
   /series/{id}:
     get:
       summary: Busca uma série por seu id.
+      tags:
+        - Serie
       description: Faz uma consulta a base de dados de séries recebendo um id como parâmetro e retornando o registro caso encontre.
       parameters:
         - in: path
@@ -97,6 +103,8 @@ paths:
           description: Sucesso
     put:
       summary: Atualiza as informações de uma série.
+      tags:
+        - Serie
       consumes:
         - application/json
       parameters:
@@ -172,6 +180,8 @@ paths:
           description: Sucesso
     delete:
       summary: Remove uma série pelo id.
+      tags:
+        - Serie
       parameters:
         - in: path
           name: id

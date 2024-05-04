@@ -1,0 +1,250 @@
+swagger: '2.0'
+paths:
+  /comics:
+    get:
+      summary: Busca todos os quadrinhos.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /comics/criar:
+    post:
+      summary: Recebe as informações de um quadrinho e armazena os dados.
+      tags:
+        - Quadrinhos
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Quadrinho
+          description: Informações do quadrinho a ser criado.
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                minimum: 1
+                description: id atribuído ao quadrinho.
+              title:
+                type: string
+                description: Título do quadrinho.
+              issueNumber:
+                type: number
+                description: Número do quadrinho em relação a série.
+              description:
+                type: string
+                description: Descrição da quadrinho.
+              format:
+                type: string
+                description: Formato do quadrinho.
+              pageCount:
+                type: integer
+                minimum: 1
+                description: Número de páginas do quadrinho.
+              textObjects:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo do texto.
+                    language:
+                      type: string
+                      description: Idioma do texto.
+                    text:
+                      type: string
+                      description: Conteúdo do texto.
+              resourceURI:
+                type: string
+                description: URI da quadrinho.
+              dates:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da data do quadrinho.
+                    date:
+                      type: string
+                      default: "01/01/1900"
+                      description: Data do quadrinho.
+              prices:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo do preço do quadrinho.
+                    price:
+                      type: number
+                      description: Preço do quadrinho.
+              creatores:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do criador do quadrinho.
+                    fullName:
+                      type: string
+                      description: Nome completo do criador do quadrinho.
+                    role:
+                      type: string
+                      description: Função desempenhada na criação do quadrinho.
+              characters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do personagem presente no quadrinho.
+                    name:
+                      type: string
+                      description: Nome do personagem presente no quadrinho.
+      responses:
+        '201':
+          description: Criado
+  /comics/{id}:
+    get:
+      summary: Busca um quadrinho por seu id.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos recebendo um id como parâmetro e retornando o registro caso encontre.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Sucesso
+    put:
+      summary: Atualiza as informações de um quadrinho.
+      tags:
+        - Quadrinhos
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+        - in: body
+          name: Quadrinho
+          description: Informações do quadrinho a ser atualizado.
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Título do quadrinho.
+              issueNumber:
+                type: number
+                description: Número do quadrinho em relação a série.
+              description:
+                type: string
+                description: Descrição da quadrinho.
+              format:
+                type: string
+                description: Formato do quadrinho.
+              pageCount:
+                type: integer
+                minimum: 1
+                description: Número de páginas do quadrinho.
+              textObjects:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo do texto.
+                    language:
+                      type: string
+                      description: Idioma do texto.
+                    text:
+                      type: string
+                      description: Conteúdo do texto.
+              resourceURI:
+                type: string
+                description: URI da quadrinho.
+              dates:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da data do quadrinho.
+                    date:
+                      type: string
+                      default: "01/01/1900"
+                      description: Data do quadrinho.
+              prices:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo do preço do quadrinho.
+                    price:
+                      type: number
+                      description: Preço do quadrinho.
+              creatores:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do criador do quadrinho.
+                    fullName:
+                      type: string
+                      description: Nome completo do criador do quadrinho.
+                    role:
+                      type: string
+                      description: Função desempenhada na criação do quadrinho.
+              characters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do personagem presente no quadrinho.
+                    name:
+                      type: string
+                      description: Nome do personagem presente no quadrinho.
+      responses:
+        '200':
+          description: Sucesso
+    delete:
+      summary: Remove um quadrinho pelo id.
+      tags:
+        - Quadrinhos
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: id do quadrinho.
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Quadrinho não encontrado
+  

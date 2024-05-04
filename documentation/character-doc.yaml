@@ -2,7 +2,9 @@ swagger: '2.0'
 paths:
   /personagens:
     get:
-      summary: Busca todos os personagem.
+      summary: Busca todos os personagens.
+      tags:
+        - Personagem
       description: Faz uma consulta a base de dados de personagens retornando todos os dados cadastrados.
       responses:
         '200':
@@ -10,12 +12,14 @@ paths:
   /personagens/criar:
     post:
       summary: Recebe as informações de um personagem e armazena os dados.
+      tags:
+        - Personagem
       consumes:
         - application/json
       parameters:
         - in: body
           name: Personagem
-          description: Informações da personagem a ser criado.
+          description: Informações do personagem a ser criado.
           required: true
           schema:
             type: object
@@ -55,10 +59,12 @@ paths:
                     description: Extensão da thumbnail do personagem.
       responses:
         '201':
-          description: Criada
+          description: Criado
   /personagens/{id}:
     get:
       summary: Busca um personagem por seu id.
+      tags:
+        - Personagem
       description: Faz uma consulta a base de dados de personagens recebendo um id como parâmetro e retornando o registro caso encontre.
       parameters:
         - in: path
@@ -70,9 +76,15 @@ paths:
           description: Sucesso
     put:
       summary: Atualiza as informações de um personagem.
+      tags:
+        - Personagem
       consumes:
         - application/json
       parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
         - in: body
           name: Personagem
           description: Informações da personagem a ser atualizado.
@@ -114,6 +126,8 @@ paths:
           description: Sucesso
     delete:
       summary: Remove um personagem pelo id.
+      tags:
+        - Personagem
       parameters:
         - in: path
           name: id
@@ -124,5 +138,5 @@ paths:
         '200':
           description: Sucesso
         '404':
-          description: Personagem não encontrada
+          description: Personagem não encontrado
   

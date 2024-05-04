@@ -39,8 +39,8 @@ All files                         |   97.92 |    96.33 |     100 |   97.92 |
   series.mock.ts                  |     100 |      100 |     100 |     100 | 
 ----------------------------------|---------|----------|---------|---------|------------------------
 
-Test Suites: 6 passed, 6 total
-Tests:       36 passed, 36 total
-Snapshots:   0 total
-Time:        9.362 s, estimated 14 s
+Test Suites: 6 passed, 6 total\
+Tests:       36 passed, 36 total\
+Snapshots:   0 total\
+Time:        9.362 s, estimated 14 s\
 Ran all test suites.

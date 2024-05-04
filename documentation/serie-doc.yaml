@@ -1,0 +1,186 @@
+swagger: '2.0'
+paths:
+  /series:
+    get:
+      summary: Busca todas as séries.
+      description: Faz uma consulta a base de dados de séries retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /series/criar:
+    post:
+      summary: Recebe as informações de uma série e armazena os dados.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Série
+          description: Informações da série a ser criada.
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                minimum: 1
+                description: id atribuído à série.
+              title:
+                type: string
+                description: Título da série.
+              description:
+                type: string
+                description: Descrição da série.
+              resourceURI:
+                type: string
+                description: URI da série.
+              startYear:
+                type: integer
+                minimum: 1900
+                description: Ano de início da série.
+              endYear:
+                type: integer
+                minimum: 1900
+                description: Ano de término da série.
+              comics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id dos quadrinhos.
+                    title:
+                      type: string
+                      description: Título dos quadrinhos.
+              characters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do personagem.
+                    name:
+                      type: string
+                      description: Nome do personagem.
+              creators:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do criador.
+                    fullName:
+                      type: string
+                      description: Nome completo do criador.
+                    role:
+                      type: string
+                      description: Papel desempenhado criador.
+      responses:
+        '201':
+          description: Criada
+  /series/{id}:
+    get:
+      summary: Busca uma série por seu id.
+      description: Faz uma consulta a base de dados de séries recebendo um id como parâmetro e retornando o registro caso encontre.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Sucesso
+    put:
+      summary: Atualiza as informações de uma série.
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+        - in: body
+          name: Série
+          description: Informações da série a ser atualizada.
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Título da série.
+              description:
+                type: string
+                description: Descrição da série.
+              resourceURI:
+                type: string
+                description: URI da série.
+              startYear:
+                type: integer
+                minimum: 1900
+                description: Ano de início da série.
+              endYear:
+                type: integer
+                minimum: 1900
+                description: Ano de término da série.
+              comics:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id dos quadrinhos.
+                    title:
+                      type: string
+                      description: Título dos quadrinhos.
+              characters:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do personagem.
+                    name:
+                      type: string
+                      description: Nome do personagem.
+              creators:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      minimum: 1
+                      description: id do criador.
+                    fullName:
+                      type: string
+                      description: Nome completo do criador.
+                    role:
+                      type: string
+                      description: Papel desempenhado criador.
+      responses:
+        '200':
+          description: Sucesso
+    delete:
+      summary: Remove uma série pelo id.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: id da série.
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Série não encontrada
+  

@@ -1,0 +1,128 @@
+swagger: '2.0'
+paths:
+  /personagens:
+    get:
+      summary: Busca todos os personagem.
+      description: Faz uma consulta a base de dados de personagens retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /personagens/criar:
+    post:
+      summary: Recebe as informações de um personagem e armazena os dados.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Personagem
+          description: Informações da personagem a ser criado.
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                minimum: 1
+                description: id atribuído ao personagem.
+              name:
+                type: string
+                description: Nome do personagem.
+              description:
+                type: string
+                description: Descrição da personagem.
+              resourceURI:
+                type: string
+                description: URI da personagem.
+              urls:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da url.
+                    url:
+                      type: string
+                      description: URL do personagem.
+              thumbnail:
+                type: object
+                properties:
+                  path:
+                    type: string
+                    description: Caminho da thumbnail do personagem.
+                  extension:
+                    type: string
+                    description: Extensão da thumbnail do personagem.
+      responses:
+        '201':
+          description: Criada
+  /personagens/{id}:
+    get:
+      summary: Busca um personagem por seu id.
+      description: Faz uma consulta a base de dados de personagens recebendo um id como parâmetro e retornando o registro caso encontre.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Sucesso
+    put:
+      summary: Atualiza as informações de um personagem.
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: Personagem
+          description: Informações da personagem a ser atualizado.
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Nome do personagem.
+              description:
+                type: string
+                description: Descrição da personagem.
+              resourceURI:
+                type: string
+                description: URI da personagem.
+              urls:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: Tipo da url.
+                    url:
+                      type: string
+                      description: URL do personagem.
+              thumbnail:
+                type: object
+                properties:
+                  path:
+                    type: string
+                    description: Caminho da thumbnail do personagem.
+                  extension:
+                    type: string
+                    description: Extensão da thumbnail do personagem.
+      responses:
+        '200':
+          description: Sucesso
+    delete:
+      summary: Remove um personagem pelo id.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+          description: id da personagem.
+      responses:
+        '200':
+          description: Sucesso
+        '404':
+          description: Personagem não encontrada
+  

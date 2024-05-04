@@ -2,8 +2,26 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './router';
 
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
 class App{
     express: express.Application;
+
+    private docs(){
+        const swaggerOptions = {
+            swaggerDefinition: {
+                info: {
+                    title: 'Prova 1 - Desafio Profissional 5',
+                    version: '1.0.0'
+                }
+            },
+            apis: ['./documentation/serie-doc.yaml', './documentation/character-doc.yaml']
+    }
+
+    const swaggerDocs = swaggerJsDoc(swaggerOptions);
+    this.express.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
+   }   
 
     private middleware(): void{
         this.express.use(express.json());
@@ -31,6 +49,7 @@ class App{
         this.middleware();
         this.database();
         this.router();
+        this.docs();
     }
 
 }

@@ -33,7 +33,7 @@ describe('Testes das séries', () => {
 
     it('Deve recuperar série pelo id', async () => {
 
-        const response = await request.default(app).get(`/series/${seriesMock[0].id}`);
+        const response = await request.default(app).get(`/series/id/${seriesMock[0].id}`);
         const foundSerie = await serieModel.findOne({id: seriesMock[0].id})
 
         expect(response.status).toEqual(200);
@@ -111,7 +111,7 @@ describe('Testes das séries', () => {
         }
 
         await serieModel.create(serieToCreate);
-        const response = await request.default(app).put(`/series/${serieId}`).send(serieToUpdate);
+        const response = await request.default(app).put(`/series/id/${serieId}`).send(serieToUpdate);
 
         expect(response.status).toEqual(200);
         expect(response.body._id).toBeDefined();
@@ -145,7 +145,7 @@ describe('Testes das séries', () => {
         }
 
         await serieModel.create(serieToCreate);
-        const response = await request.default(app).delete(`/series/${serieId}`);
+        const response = await request.default(app).delete(`/series/id/${serieId}`);
         const foundSerie = await serieModel.findOne({id: serieId});
 
         expect(response.status).toEqual(200);
@@ -169,7 +169,7 @@ describe('Testes das séries', () => {
             creators: [{ id: 35, fullName: "Amanda Nunes", role: "Roteirista"}, {id: 36, fullName: "Patrícia Cardoso", role: "Designer"}]
         }
 
-        const response = await request.default(app).put(`/series/${serieId}`).send(serieToUpdate);
+        const response = await request.default(app).put(`/series/id/${serieId}`).send(serieToUpdate);
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Série não encontrada');
@@ -180,7 +180,7 @@ describe('Testes das séries', () => {
     it('Deve retornar 404 no delete de uma série inexistente', async () => {
         
         const serieId = 20;
-        const response = await request.default(app).delete(`/series/${serieId}`);
+        const response = await request.default(app).delete(`/series/id/${serieId}`);
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Série não encontrada');

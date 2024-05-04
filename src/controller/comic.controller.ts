@@ -31,6 +31,17 @@ class ComicsController {
         const deleteComics = await comicService.delete(comic?._id)
         return deleteComics.includes('não encontrado') ? res.status(404).send(deleteComics) : res.send(deleteComics)
     }
+
+    async biggestDescription(req: Request, res: Response){
+        const foundComic = await comicService.biggestDescription()
+        return res.json(foundComic)
+    }
+
+    async mostRecentEdition(req: Request, res: Response) {
+        const findedComics = await comicService.mostRecentEdition(parseInt(req.params.id));
+        return res.json(findedComics)
+    } 
+
 }
 
 export default new ComicsController();

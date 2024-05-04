@@ -3,6 +3,6 @@ export interface characterType{
     name: String,
     description: String,
     resourceURI: String,
-    urls: [{ type_: String, url: String }],
+    urls: [{ type: {type: String}, url: String }],
     thumbnail: { path: String, extension: String }
 }

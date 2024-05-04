@@ -28,6 +28,14 @@ class ComicsRepository{
         return comic ? "Quadrinho Removido" : "Quadrinho não encontrado"
     }
 
+    async biggestDescription(){
+        const foundComic = await comicsModel.aggregate([{ $project: { id: 1, descriptionLength: { $strLenCP: "$description" } } },
+        { $sort: { descriptionLength: -1 } },
+        { $limit: 1 }])
+
+        return comicsModel.findOne({id: foundComic[0].id})
+    }
+
 }
 
 export default new ComicsRepository();

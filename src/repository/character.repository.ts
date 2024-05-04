@@ -27,6 +27,16 @@ class CharacterRepository{
         return character ? "Personagem Removido" : "Personagem não encontrado"
     }
 
+    async twoOrMoreNames(){
+        const names = await characterModel.find({ name: { $regex: /[-\s]/g } })
+        return names
+    }
+
+    async namesReverseOrder(){
+        const order = await characterModel.aggregate([{ $sort: { "name": -1 } }])
+        return order
+    }
+
 }
 
 export default new CharacterRepository();

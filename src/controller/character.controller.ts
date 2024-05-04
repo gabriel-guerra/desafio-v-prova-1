@@ -31,6 +31,16 @@ class CharacterController {
         const deleteCharacter = await characterService.delete(character?._id)
         return deleteCharacter.includes('não encontrado') ? res.status(404).send(deleteCharacter) : res.send(deleteCharacter)
     }
+
+    async twoOrMoreNames(req: Request, res: Response){
+        const foundChars = await characterService.twoOrMoreNames();
+        return res.json(foundChars);
+    }
+
+    async namesReverseOrder(req: Request, res: Response){
+        const foundChars = await characterService.namesReverseOrder();
+        return res.json(foundChars);  
+    }
 }
 
 export default new CharacterController();

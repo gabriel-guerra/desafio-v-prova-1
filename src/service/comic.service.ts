@@ -25,6 +25,20 @@ import {comicsType} from "../types/comics.type";
    async delete(_id:any){
       return await comicRepository.delete(_id)
    }
+   
+   async biggestDescription(){
+      const foundComic = await comicRepository.biggestDescription()
+      return foundComic
+   }
+
+   async mostRecentEdition(id: Number){
+      const comic = await this.findById(id);
+      const newest = comic?.dates.reduce((date1, date2) => {
+         return date1.date! > date2.date! ? date1 : date2;
+      })
+
+      return newest;
+   } 
 
 }
 

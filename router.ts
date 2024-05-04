@@ -14,30 +14,36 @@ router.get("/fill-database", apiController.fillDatabase)
 
 //serie
 router.get("/series", serieController.findAll)
-router.get('/series/:id', serieController.findById)
+router.get('/series/id/:id', serieController.findById)
 router.post('/series/criar', serieController.create)
-router.put('/series/:id', serieController.update)
-router.delete('/series/:id', serieController.delete)
+router.put('/series/id/:id', serieController.update)
+router.delete('/series/id/:id', serieController.delete)
 
 //comic
 router.get('/comics', comicController.findAll)
-router.get('/comics/:id', comicController.findById)
+router.get('/comics/id/:id', comicController.findById)
 router.post('/comics/criar', comicController.create)
-router.put('/comics/:id', comicController.update)
-router.delete('/comics/:id', comicController.delete)
+router.put('/comics/id/:id', comicController.update)
+router.delete('/comics/id/:id', comicController.delete)
+router.get('/comics/maior-descricao', comicController.biggestDescription)
+router.get('/comics/ultima-edicao/:id', comicController.mostRecentEdition)
+
 
 //character
 router.get('/personagens', characterController.findAll)
-router.get('/personagens/:id', characterController.findById)
+router.get('/personagens/id/:id', characterController.findById)
 router.post('/personagens/criar', characterController.create)
-router.put('/personagens/:id', characterController.update)
-router.delete('/personagens/:id', characterController.delete)
+router.put('/personagens/id/:id', characterController.update)
+router.delete('/personagens/id/:id', characterController.delete)
+router.get('/personagens/nome-composto',characterController.twoOrMoreNames)
+router.get('/personagens/nome-dec', characterController.namesReverseOrder)
 
 //creator
 router.get('/creator', creatorController.findAll)
-router.get('/creator/:id', creatorController.findById)
+router.get('/creator/id/:id', creatorController.findById)
 router.post('/creator/criar', creatorController.create)
-router.put('/creator/:id', creatorController.update)
-router.delete('/creator/:id', creatorController.delete)
+router.put('/creator/id/:id', creatorController.update)
+router.delete('/creator/id/:id', creatorController.delete)
+//router.get('/creator/colaboracoes', creatorController.numberOfColaborations)
 
 export { router };

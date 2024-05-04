@@ -25,6 +25,16 @@ class CharacterService {
     async delete(_id:any){
         return await characterRepository.delete(_id)
     }
+
+    async twoOrMoreNames(){
+        const foundChars = characterRepository.twoOrMoreNames();
+        return foundChars
+    }
+
+    async namesReverseOrder(){
+        const foundChars = characterRepository.namesReverseOrder();
+        return foundChars
+    }
 }
 
 export default new CharacterService();

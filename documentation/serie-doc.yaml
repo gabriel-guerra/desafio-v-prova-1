@@ -1,14 +1,5 @@
 swagger: '2.0'
 paths:
-  /series:
-    get:
-      summary: Busca todas as séries.
-      tags:
-        - Serie
-      description: Faz uma consulta a base de dados de séries retornando todos os dados cadastrados.
-      responses:
-        '200':
-          description: Sucesso
   /series/criar:
     post:
       summary: Recebe as informações de uma série e armazena os dados.
@@ -87,7 +78,16 @@ paths:
       responses:
         '201':
           description: Criada
-  /series/{id}:
+  /series:
+    get:
+      summary: Busca todas as séries.
+      tags:
+        - Serie
+      description: Faz uma consulta a base de dados de séries retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /series/id/{id}:
     get:
       summary: Busca uma série por seu id.
       tags:

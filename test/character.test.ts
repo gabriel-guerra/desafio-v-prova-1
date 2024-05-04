@@ -33,7 +33,7 @@ describe('Testes dos usuários', () => {
 
     it('Deve recuperar personagem pelo id', async () => {
 
-        const response = await request.default(app).get(`/personagens/${charactersMock[14].id}`);
+        const response = await request.default(app).get(`/personagens/id/${charactersMock[14].id}`);
         const foundCharacter = await characterModel.findOne({id: charactersMock[14].id})
 
         expect(response.status).toEqual(200);
@@ -97,7 +97,7 @@ describe('Testes dos usuários', () => {
         }
 
         await characterModel.create(characterToCreate);
-        const response = await request.default(app).put(`/personagens/${characterId}`).send(characterToUpdate);
+        const response = await request.default(app).put(`/personagens/id/${characterId}`).send(characterToUpdate);
 
         expect(response.status).toEqual(200);
         expect(response.body._id).toBeDefined();
@@ -124,7 +124,7 @@ describe('Testes dos usuários', () => {
         }
 
         await characterModel.create(characterToCreate);
-        const response = await request.default(app).delete(`/personagens/${characterId}`);
+        const response = await request.default(app).delete(`/personagens/id/${characterId}`);
         const foundCharacter = await characterModel.findOne({id: characterId});
 
         expect(response.status).toEqual(200);
@@ -145,7 +145,7 @@ describe('Testes dos usuários', () => {
             thumbnail: { path: 'https://thumbnail.thumb.com', extension: 'png'}
         }
 
-        const response = await request.default(app).put(`/personagens/${characterId}`).send(characterToUpdate);
+        const response = await request.default(app).put(`/personagens/id/${characterId}`).send(characterToUpdate);
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Personagem não encontrado');
@@ -156,7 +156,7 @@ describe('Testes dos usuários', () => {
     it('Deve retornar 404 no delete de um personagem inexistente', async () => {
         
         const characterId = 230;
-        const response = await request.default(app).delete(`/personagens/${characterId}`);
+        const response = await request.default(app).delete(`/personagens/id/${characterId}`);
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Personagem não encontrado');

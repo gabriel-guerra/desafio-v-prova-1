@@ -1,14 +1,5 @@
 swagger: '2.0'
 paths:
-  /creator:
-    get:
-      summary: Busca todos os criadores.
-      tags:
-        - Criador
-      description: Faz uma consulta a base de dados de criadores retornando todos os dados cadastrados.
-      responses:
-        '200':
-          description: Sucesso
   /creator/criar:
     post:
       summary: Recebe as informações de um criador e armazena os dados.
@@ -57,7 +48,16 @@ paths:
       responses:
         '201':
           description: Criado
-  /creator/{id}:
+  /creator:
+    get:
+      summary: Busca todos os criadores.
+      tags:
+        - Criador
+      description: Faz uma consulta a base de dados de criadores retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /creator/id/{id}:
     get:
       summary: Busca um criador por seu id.
       tags:

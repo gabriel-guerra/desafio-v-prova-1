@@ -3,7 +3,6 @@ import app from '../app';
 import databaseConfig from './databaseConfig';
 import { creatorsMock } from './mock/creators.mock';
 import creatorModel from '../src/model/creator.model';
-import { skip } from 'node:test';
 
 describe ('Teste dos criadores', () => {
 
@@ -31,7 +30,7 @@ describe ('Teste dos criadores', () => {
     })
 
     it('Deve obter um Creator pelo ID', async () => {
-        const response = await request.default(app).get(`/creator/${creatorsMock[0].id}`)
+        const response = await request.default(app).get(`/creator/id/${creatorsMock[0].id}`)
         const foundCreator = await creatorModel.findOne({id: creatorsMock[0].id})
         
         expect (response.status).toEqual(200)
@@ -85,7 +84,7 @@ describe ('Teste dos criadores', () => {
         }
 
         await creatorModel.create(creatorToCreate)
-        const response = await request.default(app).put(`/creator/${creatorId}`).send(creatorToUpdate)
+        const response = await request.default(app).put(`/creator/id/${creatorId}`).send(creatorToUpdate)
 
         expect (response.status).toEqual(200)
         expect (response.body._id).toBeDefined();
@@ -109,7 +108,7 @@ describe ('Teste dos criadores', () => {
         }
 
         await creatorModel.create(creatorToCreate)
-        const response = (await request.default(app).delete(`/creator/${creatorId}`));
+        const response = (await request.default(app).delete(`/creator/id/${creatorId}`));
         const foundCreator = await creatorModel.findOne({id: creatorId})
 
         expect (response.status).toEqual(200)
@@ -128,7 +127,7 @@ describe ('Teste dos criadores', () => {
             thumbnail: { path: 'https://url.thumbnail.com', extension: 'jpg'}
         }
 
-        const response = await request.default(app).put(`/creator/${creatorId}`).send(creatorToUpdate)
+        const response = await request.default(app).put(`/creator/id/${creatorId}`).send(creatorToUpdate)
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Criador não encontrado');
@@ -139,7 +138,7 @@ describe ('Teste dos criadores', () => {
     it('Deve retornar 404 no delete de um criador inexistente', async () => {
         
         const creatorId = 110;
-        const response = (await request.default(app).delete(`/creator/${creatorId}`));
+        const response = (await request.default(app).delete(`/creator/id/${creatorId}`));
 
         expect(response.status).toEqual(404);
         expect(response.text).toEqual('Criador não encontrado');

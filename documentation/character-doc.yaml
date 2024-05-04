@@ -1,14 +1,5 @@
 swagger: '2.0'
 paths:
-  /personagens:
-    get:
-      summary: Busca todos os personagens.
-      tags:
-        - Personagem
-      description: Faz uma consulta a base de dados de personagens retornando todos os dados cadastrados.
-      responses:
-        '200':
-          description: Sucesso
   /personagens/criar:
     post:
       summary: Recebe as informações de um personagem e armazena os dados.
@@ -60,7 +51,16 @@ paths:
       responses:
         '201':
           description: Criado
-  /personagens/{id}:
+  /personagens:
+    get:
+      summary: Busca todos os personagens.
+      tags:
+        - Personagem
+      description: Faz uma consulta a base de dados de personagens retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /personagens/id/{id}:
     get:
       summary: Busca um personagem por seu id.
       tags:

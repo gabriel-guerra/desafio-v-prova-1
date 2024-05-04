@@ -1,14 +1,5 @@
 swagger: '2.0'
 paths:
-  /comics:
-    get:
-      summary: Busca todos os quadrinhos.
-      tags:
-        - Quadrinhos
-      description: Faz uma consulta a base de dados de quadrinhos retornando todos os dados cadastrados.
-      responses:
-        '200':
-          description: Sucesso
   /comics/criar:
     post:
       summary: Recebe as informações de um quadrinho e armazena os dados.
@@ -84,7 +75,7 @@ paths:
                     price:
                       type: number
                       description: Preço do quadrinho.
-              creatores:
+              creators:
                 type: array
                 items:
                   type: object
@@ -114,7 +105,40 @@ paths:
       responses:
         '201':
           description: Criado
-  /comics/{id}:
+  /comics:
+    get:
+      summary: Busca todos os quadrinhos.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos retornando todos os dados cadastrados.
+      responses:
+        '200':
+          description: Sucesso
+  /comics/maior-descricao:
+    get:
+      summary: Busca o quadrinho de maior descrição.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos retornando o registro cadastrado que apresenta maior descrição.
+      responses:
+        '200':
+          description: Sucesso
+  /comics/ultima-edicao/{id}:
+    get:
+      summary: Busca informações da publicação mais recente do quadrinho.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos recebendo um id como parâmetro informações sobre sua última publicação.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: Sucesso
+    
+  /comics/id/{id}:
     get:
       summary: Busca um quadrinho por seu id.
       tags:
@@ -202,7 +226,7 @@ paths:
                     price:
                       type: number
                       description: Preço do quadrinho.
-              creatores:
+              creators:
                 type: array
                 items:
                   type: object

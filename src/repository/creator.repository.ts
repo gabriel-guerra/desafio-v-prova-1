@@ -14,19 +14,19 @@ class CreatorRepository{
     }
 
     async findById(id: Number){
-        const findedComic = await creatorModel.findOne({id: id})
-        return findedComic
+        const foundCreator = await creatorModel.findOne({id: id})
+        return foundCreator
     }
 
-    async update(_id: String, comic: creatorType){
-        const updateComic = await creatorModel.findByIdAndUpdate(_id, comic, {new: true});
-        return updateComic ? updateComic : "Criador não encontrado"
+    async update(_id: String, creator: creatorType){
+        const updateCreator = await creatorModel.findByIdAndUpdate(_id, creator, {new: true});
+        return updateCreator ? updateCreator : "Criador não encontrado"
     }
 
     async delete(_id:String){
         try {
-            const comic = await creatorModel.findByIdAndDelete(_id)
-            return comic ? "Criador Removido" : "Criador não encontrado"
+            const creator = await creatorModel.findByIdAndDelete(_id)
+            return creator ? "Criador Removido" : "Criador não encontrado"
         } catch (error) {
             throw new Error(`Não foi possível remover ${error}`)
         }

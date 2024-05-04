@@ -1,8 +1,9 @@
 import * as request from 'supertest';
 import app from '../app';
-import databaseConfig from './databaseConfig'
+import databaseConfig from './databaseConfig';
 import { comicsMock } from './mock/comics.mock';
 import comicsModel from '../src/model/comics.model';
+import { skip } from 'node:test';
 
 
 describe('Testes dos quadrinhos', () => {
@@ -19,8 +20,8 @@ describe('Testes dos quadrinhos', () => {
         return databaseConfig.cleanup();
     });
 
-    afterAll(() => {
-        return databaseConfig.drop();
+    afterAll(async () => {
+        await databaseConfig.drop();
     });
 
     it('Deve recuperar todos as comics', async () => {
@@ -32,103 +33,104 @@ describe('Testes dos quadrinhos', () => {
     });
 
     it('Deve recuperar comic por ID', async () => {
-        const response = await request.default(app).get(`/comics/${comicsMock[0].id}`);
-        const FoundComic = await comicsModel.findOne({id:comicsMock[0].id});
-
+        const response = await request.default(app).get(`/comics/${comicsMock[4].id}`);
+        const foundComic = await comicsModel.findOne({id:comicsMock[4].id});
+        
         expect(response.status).toEqual(200);
         expect(response.body._id).toBeDefined();
-        expect(response.body.id).toEqual(FoundComic?.id)
-        expect(response.body.title).toEqual(FoundComic?.title)
-        expect(response.body.description).toEqual(FoundComic?.description)
-        expect(response.body.resourceURI).toEqual(FoundComic?.resourceURI)
-        //expect(response.body.creator).toEqual(FoundComic?.creators)
-        expect(response.body.prices).toEqual(FoundComic?.prices)
-        expect(response.body.dates).toEqual(FoundComic?.dates)
-
+        expect(response.body.id).toEqual(foundComic?.id)
+        expect(response.body.title).toEqual(foundComic?.title)
+        expect(response.body.description).toEqual(foundComic?.description)
+        expect(response.body.resourceURI).toEqual(foundComic?.resourceURI)
+        expect(foundComic!.dates.map((item:any) => {
+            return { type: item.type, date: new Date(item.date).toISOString() }
+        })).toMatchObject(response.body.dates)
+        expect(foundComic!.prices).toMatchObject(response.body.prices)
+        expect(foundComic!.creators).toMatchObject(response.body.creators)
     })
 
-    it('Deve criar um comic', async () => {
-        const ComicId = 2035;
+     it('Deve criar um comic', async () => {
+        const comicId = 2035;
 
-        const ComicToCreate = {
-            id: ComicId,
+        const comicToCreate = {
+            id: comicId,
             title: 'Comic Titulo',
             description: 'Comic Teste',
             resourceURI: 'https://www.google.com.br/',
             dates: [{type: 'Detalhe', Date:'27/03/2001'}],
-            prices: [{type: 'Precos', price:'1990'}],
-            creators: [{id: '200', fullName: 'Stan Lee' , role: 'Editora-chefe'}]
+            prices: [{type: 'Precos', price:1990}],
+            creators: [{id: 200, fullName: 'Stan Lee' , role: 'Editora-chefe'}]
         }
 
-        const response = await request.default(app).post('/comics/criar').send(ComicToCreate);
+        const response = await request.default(app).post('/comics/criar').send(comicToCreate);
 
         expect (response.status).toEqual(201)
         expect (response.body._id).toBeDefined();
-        expect (response.body.id).toEqual(ComicToCreate.id)
-        expect (response.body.title).toEqual(ComicToCreate.title)
-        expect (response.body.description).toEqual(ComicToCreate.description)
-        expect (response.body.resourceURI).toEqual(ComicToCreate.resourceURI)
-        expect (response.body.dates).toEqual(ComicToCreate.dates)
-        expect (response.body.prices).toEqual(ComicToCreate.prices)
-        expect (response.body.creators).toEqual(ComicToCreate.creators)
+        expect (response.body.id).toEqual(comicToCreate.id)
+        expect (response.body.title).toEqual(comicToCreate.title)
+        expect (response.body.description).toEqual(comicToCreate.description)
+        expect (response.body.resourceURI).toEqual(comicToCreate.resourceURI)
+        expect(comicToCreate.dates).toMatchObject(response.body.dates)
+        expect(comicToCreate.prices).toMatchObject(response.body.prices)
+        expect(comicToCreate.creators).toMatchObject(response.body.creators)
 
     })
 
     it('Deve atualizar uma Comic', async () => {
-        const ComicId = 2040;
+        const comicId = 2040;
 
-        const ComicToCreate = {
-            id: ComicId,
+        const comicToCreate = {
+            id: comicId,
             title: 'Comic Titulo',
             description: 'Comic Teste',
             resourceURI: 'https://www.google.com.br/',
             dates: [{type: 'Detalhe', Date:'27/03/2001'}],
-            prices: [{type: 'Precos', price:'1990'}],
-            creators: [{id: '200', fullName: 'Stan Lee' , role: 'Editora-chefe'}]
+            prices: [{type: 'Precos', price:1990}],
+            creators: [{id: 200, fullName: 'Stan Lee' , role: 'Editora-chefe'}]
         }
 
-        const ComicToUpdate = {
+        const comicToUpdate = {
             id: 2041,
             title: 'Nova Comic Titulo',
             description: 'Comic Atualização Teste',
             resourceURI: 'https://www.google.com.br/',
             dates: [{type: 'Tipo', Date:'25/03/2001'}],
-            prices: [{type: 'Detalhe', price:'2001'}],
-            creators: [{id: '210', fullName: 'Robert Schawazzer' , role: 'Roteirista'}]
+            prices: [{type: 'Detalhe', price:2001}],
+            creators: [{id: 210, fullName: 'Robert Schawazzer' , role: 'Roteirista'}]
         }
 
-        await comicsModel.create(ComicToCreate);
-        const response = await request.default(app).put(`/comics/${comicsMock[0]}`).send(ComicToCreate);
+        await comicsModel.create(comicToCreate);
+        const response = await request.default(app).put(`/comics/${comicId}`).send(comicToUpdate);
 
         expect (response.status).toEqual(200);
         expect (response.body._id).toBeDefined();
-        expect (response.body.id).toEqual(ComicId)
-        expect (response.body.title).toEqual(ComicToUpdate.title)
-        expect (response.body.description).toEqual(ComicToUpdate.description)
-        expect (response.body.resourceURI).toEqual(ComicToUpdate.resourceURI)
-        expect (response.body.dates).toEqual(ComicToUpdate.dates)
-        expect (response.body.prices).toEqual(ComicToUpdate.prices)
-        expect (response.body.creators).toEqual(ComicToUpdate.creators)
+        expect (response.body.id).toEqual(comicId)
+        expect (response.body.title).toEqual(comicToUpdate.title)
+        expect (response.body.description).toEqual(comicToUpdate.description)
+        expect (response.body.resourceURI).toEqual(comicToUpdate.resourceURI)
+        expect(comicToUpdate.dates).toMatchObject(response.body.dates)
+        expect(comicToUpdate.prices).toMatchObject(response.body.prices)
+        expect(comicToUpdate.creators).toMatchObject(response.body.creators)
     })
 
     it('Deve excluir uma Comic', async () => {
-        const ComicId = 2045;
+        const comicId = 2045;
 
-        const ComicToCreate = {
-            id: ComicId,
+        const comicToCreate = {
+            id: comicId,
             title: 'Comic Titulo',
             description: 'Comic Teste',
             resourceURI: 'https://www.google.com.br/',
             dates: [{type: 'Detalhe', Date:'27/03/2001'}],
-            prices: [{type: 'Precos', price:'1990'}],
-            creators: [{id: '200', fullName: 'Stan Lee' , role: 'Editora-chefe'}]
+            prices: [{type: 'Precos', price:1990}],
+            creators: [{id: 200, fullName: 'Stan Lee' , role: 'Editora-chefe'}]
         }
-        await comicsModel.create(ComicToCreate)
-        const response = await request.default(app).delete(`/comics/${comicsMock[0]}`);
-        const FoundComic = await comicsModel.findOne({id: ComicId});
+        await comicsModel.create(comicToCreate)
+        const response = await request.default(app).delete(`/comics/${comicId}`);
+        const foundComic = await comicsModel.findOne({id: comicId});
 
         expect (response.status).toEqual(200);
-        expect (FoundComic).toBe(null);
+        expect (foundComic).toBe(null);
     })
 
 })

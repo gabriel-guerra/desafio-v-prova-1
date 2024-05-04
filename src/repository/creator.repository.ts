@@ -28,7 +28,6 @@ class CreatorRepository{
         return creator ? "Criador Removido" : "Criador não encontrado"
     }
 
-
 }
 
 export default new CreatorRepository();

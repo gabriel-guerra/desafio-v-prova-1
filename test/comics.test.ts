@@ -198,4 +198,30 @@ describe('Testes dos quadrinhos', () => {
         
     })
 
+    it('Deve retornar colaborações dos criadores', async () => {
+        const response = await request.default(app).get(`/comics/colaboracoes-criadores`);
+        
+        const allComics = await request.default(app).get(`/comics`);
+        
+        const contagem = allComics.body.reduce(
+            (counts: any, comic: any) => {
+                comic.creators.forEach((creator: any) => {
+                    const { fullName } = creator;
+                    counts[fullName] = (counts[fullName] || 0) + 1;
+            });
+
+            return counts;
+
+          }, {});
+          
+          const listaColabs = Object.entries(contagem).map(([fullName, colaboracoes]) => ({
+            colaboracoes,
+            nome: fullName,
+          }));
+        
+        expect(response.status).toEqual(200);
+        expect(response.body).toEqual(listaColabs);
+        
+    })
+
 })

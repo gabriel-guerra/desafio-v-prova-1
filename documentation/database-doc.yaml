@@ -1,0 +1,11 @@
+swagger: '2.0'
+paths:
+  /fill-database:
+    get:
+      summary: Busca informações da API Marvel.
+      tags:
+        - Banco de dados
+      description: Faz requisições à API Marvel e preenche o banco de dados da aplicação com dados de Séries, Quadrinhos, Personagens e Criadores.
+      responses:
+        '200':
+          description: Sucesso

@@ -60,6 +60,24 @@ paths:
       responses:
         '200':
           description: Sucesso
+  /personagens/nome-composto:
+    get:
+      summary: Busca todos os personagens que possuem nome composto.
+      tags:
+        - Personagem
+      description: Faz uma consulta a base de dados de personagens retornando todos os registros que tenham nome composto.
+      responses:
+        '200':
+          description: Sucesso
+  /personagens/nome-dec:
+    get:
+      summary: Busca todos os personagens e os retorna em ordem decrescente de nome.
+      tags:
+        - Personagem
+      description: Faz uma consulta a base de dados de personagens retornando todos os registros ordenados de forma decrescente em relação ao nome.
+      responses:
+        '200':
+          description: Sucesso
   /personagens/id/{id}:
     get:
       summary: Busca um personagem por seu id.

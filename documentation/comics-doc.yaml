@@ -123,6 +123,15 @@ paths:
       responses:
         '200':
           description: Sucesso
+  /comics/colaboracoes-criadores:
+    get:
+      summary: Faz um resumo de quantas colaborações os criadores fizeram nos quadrinhos.
+      tags:
+        - Quadrinhos
+      description: Faz uma consulta a base de dados de quadrinhos retornando uma lista de quantas colaborações foram feitas por cada um dos criadores presentes em pelo menos um quadrinho.
+      responses:
+        '200':
+          description: Sucesso
   /comics/ultima-edicao/{id}:
     get:
       summary: Busca informações da publicação mais recente do quadrinho.
@@ -137,7 +146,6 @@ paths:
       responses:
         '200':
           description: Sucesso
-    
   /comics/id/{id}:
     get:
       summary: Busca um quadrinho por seu id.

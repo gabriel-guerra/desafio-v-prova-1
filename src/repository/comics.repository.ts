@@ -36,6 +36,17 @@ class ComicsRepository{
         return comicsModel.findOne({id: foundComic[0].id})
     }
 
+    async creatorsCollabCount(){
+        const collabs = comicsModel.aggregate([
+            { $unwind: "$creators" }, 
+            { $group: { _id: "$creators.fullName", colaboracoes: { $sum: 1 } } }, 
+            { $project: { _id: 0, nome: "$_id", colaboracoes: 1 } }, 
+            { $sort: { colaboracoes: -1 } }
+        ])
+        
+        return collabs
+    }
+
 }
 
 export default new ComicsRepository();

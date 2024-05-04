@@ -163,4 +163,26 @@ describe('Testes dos usuários', () => {
  
     })
 
+    it('Deve retornar personagens de nome composto', async () => {
+        
+        const response = await request.default(app).get(`/personagens/nome-composto`);
+
+        expect(response.status).toEqual(200);
+        expect(response.body.every((item:any) => item.name.match(/[-\s]/))).toBe(true);
+
+    })
+
+    it('Deve retornar personagens em ordem decrescente de nome', async () => {
+        
+        const response = await request.default(app).get(`/personagens/nome-dec`);
+        const respNames = response.body.map((item: any) => item.name)
+
+        const allChars = await request.default(app).get(`/personagens`);
+        const decSort = allChars.body.map((item: any) => item.name).sort().reverse();
+
+        expect(response.status).toEqual(200);
+        expect(respNames).toEqual(decSort)
+        
+    })
+
 })

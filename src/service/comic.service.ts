@@ -38,7 +38,12 @@ import {comicsType} from "../types/comics.type";
       })
 
       return newest;
-   } 
+   }
+
+   async creatorsCollabCount(){
+      const collabs = await comicRepository.creatorsCollabCount();
+      return collabs
+   }
 
 }
 

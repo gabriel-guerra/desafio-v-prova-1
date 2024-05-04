@@ -27,7 +27,7 @@ router.put('/comics/id/:id', comicController.update)
 router.delete('/comics/id/:id', comicController.delete)
 router.get('/comics/maior-descricao', comicController.biggestDescription)
 router.get('/comics/ultima-edicao/:id', comicController.mostRecentEdition)
-
+router.get('/comics/colaboracoes-criadores', comicController.creatorsCollabCount)
 
 //character
 router.get('/personagens', characterController.findAll)
@@ -44,6 +44,5 @@ router.get('/creator/id/:id', creatorController.findById)
 router.post('/creator/criar', creatorController.create)
 router.put('/creator/id/:id', creatorController.update)
 router.delete('/creator/id/:id', creatorController.delete)
-//router.get('/creator/colaboracoes', creatorController.numberOfColaborations)
 
 export { router };

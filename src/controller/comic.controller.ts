@@ -40,7 +40,12 @@ class ComicsController {
     async mostRecentEdition(req: Request, res: Response) {
         const findedComics = await comicService.mostRecentEdition(parseInt(req.params.id));
         return res.json(findedComics)
-    } 
+    }
+
+    async creatorsCollabCount(req: Request, res: Response){
+        const collabs = await comicService.creatorsCollabCount();
+        return res.json(collabs)
+    }
 
 }
 

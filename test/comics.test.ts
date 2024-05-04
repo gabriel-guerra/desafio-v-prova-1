@@ -133,4 +133,36 @@ describe('Testes dos quadrinhos', () => {
         expect (foundComic).toBe(null);
     })
 
+    it('Deve retornar 404 no update de um comic inexistente', async () => {
+        
+        const comicId = 2040;
+
+        const comicToUpdate = {
+            id: 2041,
+            title: 'Nova Comic Titulo',
+            description: 'Comic Atualização Teste',
+            resourceURI: 'https://www.google.com.br/',
+            dates: [{type: 'Tipo', Date:'25/03/2001'}],
+            prices: [{type: 'Detalhe', price:2001}],
+            creators: [{id: 210, fullName: 'Robert Schawazzer' , role: 'Roteirista'}]
+        }
+
+        const response = await request.default(app).put(`/comics/${comicId}`).send(comicToUpdate);
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Quadrinho não encontrado');
+ 
+
+    })
+
+    it('Deve retornar 404 no delete de um comic inexistente', async () => {
+        
+        const comicId = 2045;
+        const response = await request.default(app).delete(`/comics/${comicId}`);
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Quadrinho não encontrado');
+ 
+    })
+
 })

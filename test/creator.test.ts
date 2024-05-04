@@ -115,4 +115,35 @@ describe ('Teste dos criadores', () => {
         expect (response.status).toEqual(200)
         expect (foundCreator).toBe(null)
     })
+
+    it('Deve retornar 404 no update de um criador inexistente', async () => {
+        
+        const creatorId = 100;
+
+        const creatorToUpdate = {
+            id: 101,
+            fullName: 'Jack Kirby',
+            resourceURI: 'https://google.com',
+            urls: [{ type: 'tipo', url: 'htts://tipo.url.com' }],
+            thumbnail: { path: 'https://url.thumbnail.com', extension: 'jpg'}
+        }
+
+        const response = await request.default(app).put(`/creator/${creatorId}`).send(creatorToUpdate)
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Criador não encontrado');
+ 
+
+    })
+
+    it('Deve retornar 404 no delete de um criador inexistente', async () => {
+        
+        const creatorId = 110;
+        const response = (await request.default(app).delete(`/creator/${creatorId}`));
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Criador não encontrado');
+ 
+    })
+
 })

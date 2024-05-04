@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./main.ts",
-    "test": "jest --coverage"
+    "cluster": "nodemon ./cluster.ts",
+    "test": "jest --coverage",
+    "cannon:series": "npx autocannon -c 500 -d 20 -w 10 --renderStatusCodes --latency --warmup [ -c 1 -d 2 ] localhost:3000/series",
+    "cannon:characters": "npx autocannon -c 500 -d 20 -w 10 --renderStatusCodes --latency --warmup [ -c 1 -d 2 ] localhost:3000/personagens",
+    "cannon:comics": "npx autocannon -c 500 -d 20 -w 10 --renderStatusCodes --latency --warmup [ -c 1 -d 2 ] localhost:3000/comics",
+    "cannon:creators": "npx autocannon -c 500 -d 20 -w 10 --renderStatusCodes --latency --warmup [ -c 1 -d 2 ] localhost:3000/creator"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +29,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "autocannon": "^7.15.0",
     "express": "^4.19.2",
     "mongoose": "^8.3.1",
     "swagger-jsdoc": "^6.2.8",

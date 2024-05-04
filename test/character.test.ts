@@ -132,4 +132,35 @@ describe('Testes dos usuários', () => {
 
     })
 
+    it('Deve retornar 404 no update de um personagem inexistente', async () => {
+        
+        const characterId = 220;
+
+        const characterToUpdate = {
+            id: 999,
+            name: 'Personagem Secundário',
+            description: 'Atualização de um personagem',
+            resourceURI: 'https://uri.character.com',
+            urls: [{ type_: 'wiki', url: 'htts://wiki.url.com' }],
+            thumbnail: { path: 'https://thumbnail.thumb.com', extension: 'png'}
+        }
+
+        const response = await request.default(app).put(`/personagens/${characterId}`).send(characterToUpdate);
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Personagem não encontrado');
+ 
+
+    })
+
+    it('Deve retornar 404 no delete de um personagem inexistente', async () => {
+        
+        const characterId = 230;
+        const response = await request.default(app).delete(`/personagens/${characterId}`);
+
+        expect(response.status).toEqual(404);
+        expect(response.text).toEqual('Personagem não encontrado');
+ 
+    })
+
 })

@@ -24,12 +24,8 @@ class ComicsRepository{
     }
 
     async delete(_id:String){
-        try {
-            const comic = await comicsModel.findByIdAndDelete(_id)
-            return comic ? "Quadrinho Removido" : "Quadrinho não encontrado"
-        } catch (error) {
-            throw new Error(`Não foi possível remover ${error}`)
-        }
+        const comic = await comicsModel.findByIdAndDelete(_id)
+        return comic ? "Quadrinho Removido" : "Quadrinho não encontrado"
     }
 
 }

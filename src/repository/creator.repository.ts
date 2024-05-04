@@ -24,12 +24,8 @@ class CreatorRepository{
     }
 
     async delete(_id:String){
-        try {
-            const creator = await creatorModel.findByIdAndDelete(_id)
-            return creator ? "Criador Removido" : "Criador não encontrado"
-        } catch (error) {
-            throw new Error(`Não foi possível remover ${error}`)
-        }
+        const creator = await creatorModel.findByIdAndDelete(_id)
+        return creator ? "Criador Removido" : "Criador não encontrado"
     }
 
 

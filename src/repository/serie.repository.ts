@@ -23,12 +23,8 @@ class SerieRepository{
     }
 
     async delete(id:Number){
-        try {
-            const serie = await serieModel.findByIdAndDelete(id);
-            return serie ? "Serie Removida" : "Serie não encontrada"
-        } catch (error) {
-            throw new Error(`Não foi possível remover ${error}`)
-        }
+        const serie = await serieModel.findByIdAndDelete(id);
+        return serie ? "Série Removida" : "Série não encontrada"
     }
 
 }
